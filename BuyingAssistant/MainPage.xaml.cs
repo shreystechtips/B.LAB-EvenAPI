@@ -18,19 +18,19 @@ namespace BuyingAssistant {
         async private void init()
         {
             //tries to create the web request (it doesn't work right now, we need to research how to do this)
-            test.Text = "trying";
+            BankBalance.Text = "trying";
                 WebRequest req = WebRequest.Create("https://api.evenfinancial.com/leads/rateTables");
 
                 req.Method = "POST";
-                req.ContentType = "application/json";
-                test.Text = "created req";
+            req.ContentType = "application/json";
+            BankBalance.Text = "created req";
                 string postData = "";//"api_option=" + "paste" + "&api_paste_code=" + temp + "&api_dev_key=" + "add_api_key";
                 byte[] byteArray = Encoding.UTF8.GetBytes(postData);
                 req.ContentLength = byteArray.Length;
 
                 Stream ds = req.GetRequestStream();
                 ds.Write(byteArray, 0, byteArray.Length);
-                test.Text = "write req";
+                BankBalance.Text = "write req";
                 ds.Close();
         
             try
