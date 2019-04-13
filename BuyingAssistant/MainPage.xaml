@@ -12,7 +12,7 @@
             <!-- TextBox -->
         <Label x:Name="test" Text="Hi"/>
             <!-- Button -->
-        <Button Text="CLick here" Clicked="Handle_Clicked" VerticalOptions="EndAndExpand"/>
+        <Button Text="Home Page" Clicked="Handle_Clicked" VerticalOptions="EndAndExpand"/>
             </StackLayout>
     </ContentPage.Content>
 </ContentPage>
