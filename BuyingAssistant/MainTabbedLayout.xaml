@@ -8,7 +8,7 @@
     android:TabbedPage.BarSelectedItemColor="{StaticResource TabMainColor}"
     android:TabbedPage.BarBackgroundColor="{StaticResource TabBGColor}"
     Title="BuyingAssistant"
-            Icon="search_icon.png">
+            Icon="baseline_search_24.png">
     <ContentPage.Content>
     </ContentPage.Content>
 </TabbedPage>

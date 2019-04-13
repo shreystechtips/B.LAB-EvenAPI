@@ -4,6 +4,7 @@ using Plugin.Clipboard;
 using Xamarin.Forms;
 using System.Text;
 using System.Net;
+using Xamarin.Essentials;
 
 namespace BuyingAssistant {
     //Searching for a loan, user enters the product they want and its costs

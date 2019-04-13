@@ -6,12 +6,12 @@
     ios:Page.UseSafeArea="true"
     ios:NavigationPage.PrefersLargeTitles="true"
     Title="Matches"
-    Icon="ic_match.png">
+    Icon="baseline_search_24.xml">
     <ContentPage.Content>
         <StackLayout VerticalOptions="EndAndExpand"> <!--The vertical options set vertical position on page, horizontal sets it in horizontal position-->
             <!-- TextBox -->
         <Label x:Name="test" Text="Hi"/>
-            <!-- Button -->
+           <!-- Button -->
         <Button Text="Home Page" Clicked="Handle_Clicked" VerticalOptions="EndAndExpand"/>
             </StackLayout>
     </ContentPage.Content>

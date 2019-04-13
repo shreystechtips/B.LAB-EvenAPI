@@ -88,7 +88,23 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
-    <AndroidResource Include="Resources\drawable\search_icon.png" />
+    <AndroidResource Include="Resources\drawable\baseline_search_24.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\baseline_search_black_18.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\baseline_search_black_24.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\baseline_search_black_36.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\baseline_search_black_48.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\baseline_search_black_18.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\baseline_search_black_24.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\baseline_search_black_36.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\baseline_search_black_48.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_search_black_18.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_search_black_24.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_search_black_36.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_search_black_48.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_search_black_18.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_search_black_24.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_search_black_36.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_search_black_48.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
