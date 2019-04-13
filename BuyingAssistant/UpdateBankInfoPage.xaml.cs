@@ -49,14 +49,14 @@ namespace BuyingAssistant {
 
         private void Entry_TextChanged(object sender, TextChangedEventArgs e) {
 
-            Preferences.Set("PersonName", e);
+            Preferences.Set("PersonName", e.NewTextValue());
         }
 
         private void CardBenefits_SelectedIndexChanged(System.Object sender, System.EventArgs e) {
 
         }
 
-        private void PersonName_SelectedIndexChanged(System.Object sender, System.EventArgs e) {
+        private void _SelectedIndexChanged(System.Object sender, System.EventArgs e) {
 
         }
     }
