@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin.Essentials;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace BuyingAssistant
@@ -10,6 +11,13 @@ namespace BuyingAssistant
         public App()
         {
             InitializeComponent();
+
+            //If the person's name is blank then prompt them for their bank info
+            if (Preferences.Get("PersonName", "").Equals(""))
+            {
+
+                MainPage = new UpdateBankInfoPage();
+            }
             
             MainPage = new MainTabbedLayout();
         }
