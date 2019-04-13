@@ -60,5 +60,8 @@ namespace BuyingAssistant {
                 await DisplayAlert("Alert", "Hi", "Ok");
             });
         }
+
+        void SearchTextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e)
+        {}
     }
 }

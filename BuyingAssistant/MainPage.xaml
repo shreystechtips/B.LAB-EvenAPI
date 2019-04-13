@@ -8,11 +8,10 @@
     Title="Matches"
     Icon="baseline_search_24.xml">
     <ContentPage.Content>
-        <StackLayout VerticalOptions="EndAndExpand"> <!--The vertical options set vertical position on page, horizontal sets it in horizontal position-->
-            <!-- TextBox -->
-        <Label x:Name="test" Text="Hi"/>
-           <!-- Button -->
-        <Button Text="Home Page" Clicked="Handle_Clicked" VerticalOptions="EndAndExpand"/>
-            </StackLayout>
+        <StackLayout VerticalOptions="StartAndExpand">
+            <SearchBar x:Name="searchBar"
+                    Placeholder="Enter Amount of Money"
+                    TextChanged="SearchTextChanged"/>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
