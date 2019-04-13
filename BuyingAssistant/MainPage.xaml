@@ -8,6 +8,6 @@
     Title="Matches"
     Icon="ic_match.png">
     <ContentPage.Content>
-        <Label Text="Hi"/>
+        <Label x:Name="test" Text="Hi"/>
     </ContentPage.Content>
 </ContentPage>
