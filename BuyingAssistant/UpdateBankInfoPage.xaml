@@ -36,8 +36,7 @@
                 </Picker.Items>
             </Picker>
 
-
-            <Picker x:Name="PersonName" Title="Full Name" SelectedIndexChanged="CardBenefits_SelectedIndexChanged"></Picker>
+            <Picker x:Name="CreditRange" Title="Credit Range " SelectedIndexChanged="CardBenefits_SelectedIndexChanged"></Picker>
 
         </StackLayout>
     </ContentPage.Content>

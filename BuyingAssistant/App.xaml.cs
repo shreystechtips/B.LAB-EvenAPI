@@ -15,7 +15,6 @@ namespace BuyingAssistant
             //If the person's name is blank then prompt them for their bank info
             if (Preferences.Get("PersonName", "").Equals(""))
             {
-
                 MainPage = new UpdateBankInfoPage();
             }
             
