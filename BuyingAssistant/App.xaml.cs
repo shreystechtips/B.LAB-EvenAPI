@@ -14,19 +14,11 @@ namespace BuyingAssistant
             MainPage = new MainTabbedLayout();
         }
 
-        protected override void OnStart()
-        {
-            // Handle when your app starts
-        }
-
         protected override void OnSleep()
         {
-            // Handle when your app sleeps
-        }
+            //When the app is sleeping or the user isn't in the app and in the task manager (switching app mode)
+            //then the screen becomes white
 
-        protected override void OnResume()
-        {
-            // Handle when your app resumes
         }
     }
 }
