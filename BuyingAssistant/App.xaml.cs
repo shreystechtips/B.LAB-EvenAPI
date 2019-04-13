@@ -10,8 +10,8 @@ namespace BuyingAssistant
         public App()
         {
             InitializeComponent();
-
-            MainPage = new MainPage();
+            
+            MainPage = new MainTabbedLayout();
         }
 
         protected override void OnStart()
