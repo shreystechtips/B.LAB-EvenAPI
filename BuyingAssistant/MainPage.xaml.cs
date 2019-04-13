@@ -1,16 +1,12 @@
 ﻿using System;
 using System.IO;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using Plugin.Clipboard;
 using Xamarin.Forms;
 using System.Text;
 using System.Net;
 
-
-namespace BuyingAssistant
-{
+namespace BuyingAssistant {
+    //Searching for a loan, user enters the product they want and its costs
     public partial class MainPage : ContentPage
     {
         public MainPage()
@@ -35,6 +31,7 @@ namespace BuyingAssistant
                 ds.Write(byteArray, 0, byteArray.Length);
                 test.Text = "write req";
                 ds.Close();
+        
             try
             {
                 WebResponse wr = req.GetResponse();
