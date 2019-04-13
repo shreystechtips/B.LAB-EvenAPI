@@ -8,6 +8,11 @@
     Title="Matches"
     Icon="ic_match.png">
     <ContentPage.Content>
+        <StackLayout VerticalOptions="EndAndExpand"> <!--The vertical options set vertical position on page, horizontal sets it in horizontal position-->
+            <!-- TextBox -->
         <Label x:Name="test" Text="Hi"/>
+            <!-- Button -->
+        <Button Text="CLick here" Clicked="Handle_Clicked" VerticalOptions="EndAndExpand"/>
+            </StackLayout>
     </ContentPage.Content>
 </ContentPage>

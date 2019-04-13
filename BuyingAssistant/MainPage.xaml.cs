@@ -52,5 +52,13 @@ namespace BuyingAssistant
                 });
             }
         }
+
+        void Handle_Clicked(object sender, System.EventArgs e)
+        {
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                await DisplayAlert("Alert", "Hi", "Ok");
+            });
+        }
     }
 }
