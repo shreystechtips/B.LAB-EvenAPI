@@ -20,6 +20,7 @@ namespace BuyingAssistant
         }
         async private void init()
         {
+            //tries to create the web request (it doesn't work right now, we need to research how to do this)
             test.Text = "trying";
                 WebRequest req = WebRequest.Create("https://api.evenfinancial.com/leads/rateTables");
 
@@ -53,6 +54,7 @@ namespace BuyingAssistant
             }
         }
 
+        //this method is called when the button with the text "click here" is clicked (i called the method this, you can rename this and the clicked parameter in the .xaml file)
         void Handle_Clicked(object sender, System.EventArgs e)
         {
             Device.BeginInvokeOnMainThread(async () =>
