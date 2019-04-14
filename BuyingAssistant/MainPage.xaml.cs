@@ -165,8 +165,12 @@ namespace BuyingAssistant {
 
         public void OnDelete(object sender, EventArgs e)
         {
-            Console.WriteLine(sender.ToString());
-            DisplayAlert("Delete Context Action",  " delete context action", "OK");
+            var menuItem = ((MenuItem)sender).CommandParameter;
+            var other = (BetterSctruct)menuItem;
+            JArray items = JArray.Parse(Preferences.Get("savedItems", "[]"));
+            items.RemoveAt((savedList.ItemsSource as List<BetterSctruct>).IndexOf(other));
+
+            DisplayAlert("Notice", "Deleted Item", "OK");
         }
 
 
