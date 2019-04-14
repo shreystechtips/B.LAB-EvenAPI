@@ -8,17 +8,18 @@
     Title="Search"
     Icon="baseline_search_24.xml">
     <ContentPage.Content>
-        <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
+        <ScrollView VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
+            <StackLayout>
             <SearchBar x:Name="searchBar"
                     Placeholder="Enter Amount of Money"
                     TextChanged="SearchTextChanged"
                        HorizontalOptions="CenterAndExpand"/>
             <Label x:Name="BankBalance"
-                    Text="Balance:&#x0a;$99999" 
+                    Text="" 
                    FontSize="75" 
                    TextColor="#b4b4b4"
                    HorizontalOptions="CenterAndExpand"/>
-            <Button Image="outline_star_border_24.xml"/>
+           
             <ListView HorizontalOptions="CenterAndExpand" Footer="" x:Name="savedList">
                  <ListView.ItemTemplate>
                             <DataTemplate>
@@ -33,7 +34,10 @@
                             </DataTemplate>
                         </ListView.ItemTemplate>
                 </ListView>
-        </StackLayout>
+                </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
-<!--<L-->
+<!--<
+ <Button Image="outline_star_border_24.xml"/>
+->
