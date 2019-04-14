@@ -19,7 +19,6 @@ namespace BuyingAssistant
         public MainPage()
         {
             InitializeComponent();
-            init();
             populateList();
         }
         String savingsOfferUri;
