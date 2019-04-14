@@ -18,7 +18,7 @@
                    FontSize="75" 
                    TextColor="#b4b4b4"
                    HorizontalOptions="CenterAndExpand"/>
-            <Button android:drawableRight="@drawable/some_image" 
+            <Button android:drawableRight="@drawable/star_border_24" 
                 android:layout_width="wrap_content" 
                 android:layout_height="wrap_content" 
                 android:text="Some text" />
