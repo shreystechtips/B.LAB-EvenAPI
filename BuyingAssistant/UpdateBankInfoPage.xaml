@@ -8,18 +8,14 @@
     Title="Matches"
     Icon="ic_match.png">
     <ContentPage.Content>
-        <StackLayout VerticalOptions="EndAndExpand"> <!--The vertical options set vertical position on page, horizontal sets it in horizontal position-->
-            <!-- TextBox -->
-        <Label x:Name="test" Text="Hi"/>
-            <!-- Button -->
-        <Button Text="Home Page" Clicked="Handle_Clicked" VerticalOptions="EndAndExpand"/>
-
-        <Entry x:Name="PersonName" Placeholder="Full Name" TextChanged="Entry_TextChanged"></Entry>
+        <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
+            <!--The vertical options set vertical position on page, horizontal sets it in horizontal position-->
+            <Entry x:Name="PersonName" Placeholder="Full Name" TextChanged="Entry_TextChanged"/>
 
             <Picker x:Name="CardBenefits" Title="Card Benefits" SelectedIndexChanged="CardBenefits_SelectedIndexChanged">
                 <Picker.Items>
 
-                    <x:String>balance_transfer</x:String>
+                    <x:String>Balance Transfer</x:String>
 
                     <x:String>Earning Rewards</x:String>
 
@@ -27,16 +23,17 @@
 
                     <x:String>Travel Incentives</x:String>
 
-                    <x:String>Low_Interest</x:String>
+                    <x:String>Low Interest</x:String>
 
                     <x:String>New To Credit</x:String>
 
                     <x:String>Student</x:String>
 
+
                 </Picker.Items>
             </Picker>
 
-            <Picker x:Name="CreditRange" Title="Credit Range " SelectedIndexChanged="CardBenefits_SelectedIndexChanged"></Picker>
+            <Picker x:Name="CreditRange" Title="Credit Range " SelectedIndexChanged="CardBenefits_SelectedIndexChanged"/>
 
         </StackLayout>
     </ContentPage.Content>

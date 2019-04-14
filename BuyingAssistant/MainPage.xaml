@@ -5,7 +5,7 @@
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     ios:Page.UseSafeArea="true"
     ios:NavigationPage.PrefersLargeTitles="true"
-    Title="Matches"
+    Title="Search"
     Icon="baseline_search_24.xml">
     <ContentPage.Content>
         <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">

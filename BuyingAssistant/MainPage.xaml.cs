@@ -62,6 +62,8 @@ namespace BuyingAssistant {
         }
 
         void SearchTextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e)
-        {}
+        {
+            
+        }
     }
 }
