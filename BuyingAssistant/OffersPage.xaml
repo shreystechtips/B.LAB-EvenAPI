@@ -7,5 +7,23 @@
     ios:NavigationPage.PrefersLargeTitles="true"
     Title="Offers">
     <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="offers"
+                      ItemTapped="Offers_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout VerticalOptions="FillAndExpand"
+                                         HorizontalOptions="FillAndExpand"
+                                         Padding="10"
+                                         Margin="0">
+                                <Label Text="{Binding avgApr}"/>
+                                <Label Text="{Binding monthlyPay}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
