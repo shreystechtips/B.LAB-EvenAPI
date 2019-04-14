@@ -9,7 +9,8 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Icon="outline_add_circle_outline_24.xml" 
                      Clicked="Handle_Clicked"
-                     x:Name="saveFavorites"/>
+                     x:Name="saveFavorites"
+                     Text="+"/>
         </ContentPage.ToolbarItems>
     <ContentPage.Content>
          <ScrollView>
