@@ -110,15 +110,17 @@ namespace BuyingAssistant {
             await Clipboard.SetTextAsync(j);
 
             List<Dictionary<String, String>> DisplayData = new List<Dictionary<String, String>>();
-            foreach (JObject d in ret["loanOffers"])
+            for (int i = 0; i < ((JObject)ret["loanOffers"]).Count; i++)
             {
-                d["name"] = ret["name"];
-                d["amount"] = ret["maxAmount"];
-                d["apr"] = ret["meanApr"];
-                d["desc"] = ret["originator"]["description"];
-                d["image"] = ret["originator"]["images"][0]["url"];
-                d["length"] = ret["termLength"];
-                d["url"] = ret["url"];
+                Dictionary<string, string> temp = new Dictionary<string, string>();
+                temp.Add("name", (String) ret["loanOffers"][i]["name"]);
+                temp.Add("amount", (String) ret["loanOffers"][i]["maxAmount"]);
+                temp.Add("apr", (String) ret["loanOffers"][i]["meanApr"]);
+                temp.Add("desc", (String) ret["loanOffers"][i]["originator"]["description"]);
+                temp.Add("image", (String) ret["loanOffers"][i]["originator"]["images"][0]["url"]);
+                temp.Add("length", (String) ret["loanOffers"][i]["termLength"]);
+                temp.Add("url", (String) ret["loanOffers"][i]["url"]);
+                DisplayData.Add(temp);
             }
         }
 
