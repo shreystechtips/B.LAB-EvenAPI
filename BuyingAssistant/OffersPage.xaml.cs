@@ -42,9 +42,15 @@ namespace BuyingAssistant
                 String a = (String)temp["apr"];
                 String b = (String)temp["monthly"];
                 String c = (String)temp["url"];
+                String d = (String)temp["monthly"];
+                String f = (String)temp["length"];
                 String imageUrl = temp["image"];
                 Console.WriteLine(a + "lols" + b + "lolsdfs" + c + "sfgsfgasf" + temp["image"]);
-                dic.Add(new Dict2 { name = (String)temp["name"], apr = "APR: " + a, url = c, image = imageUrl });
+                dic.Add(new Dict2 { 
+                    name = (String)temp["name"], 
+                    apr = "$" + d + " @ " + a + "% APR for " + f + " months",
+                    url = c, 
+                    image = imageUrl });
             }
             return dic;
         }

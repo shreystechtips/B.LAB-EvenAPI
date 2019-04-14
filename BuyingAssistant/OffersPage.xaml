@@ -21,7 +21,10 @@
                       ItemTapped="Offers_ItemTapped"
                       HorizontalOptions="StartAndExpand"
                       VerticalOptions="StartAndExpand"
-                      Footer="">
+                      Footer="Powered by Even Financial"
+                      RowHeight="100"
+                      SeperatorVisibility="Default"
+                      SeperatorColor="DarkGray"
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell Height="30">
@@ -30,8 +33,8 @@
                                          HorizontalOptions="FillAndExpand"
                                          Padding="0"
                                          Margin="0">
-                                <Label Text="{Binding name}"/>
-                                <Label Text="{Binding apr}"/>
+                                <Label Text="{Binding name}" TexColor= "Maroon" FontAttributes="Bold" FontSize="32"/>/>
+                                <Label Text="{Binding apr}" FontSize="26"/>
                                 
                             </StackLayout>
                                 <StackLayout>
