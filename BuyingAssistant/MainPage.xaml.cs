@@ -21,7 +21,11 @@ namespace BuyingAssistant
             InitializeComponent();
             populateList();
         }
-        String savingsOfferUri;
+        protected override void OnAppearing()
+        {
+            populateList();
+        }
+            String savingsOfferUri;
 
          public void populateList()
         {
@@ -171,8 +175,13 @@ namespace BuyingAssistant
 
             return new String[] { Birthdays[RB], PhoneNumbers[RPN], SSN[RSS] };
         }
+
+        void Handle_ItemTapped(object sender, Xamarin.Forms.ItemTappedEventArgs e)
+        {
+
+        }
     }
-  
+
 }
 
 /** Alert syntax
