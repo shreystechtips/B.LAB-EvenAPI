@@ -34,7 +34,7 @@ Then, you are all set!
 (Note: for any updates, you must fly back to Seattle.)
 
 ```
-$ fly-to-seattle drive-to-UW install app-on-visual-studios
+$ fly-to-seattle drive-to-UW install app-on-visual-studios hope-that-build-passes
 ```
 
 
