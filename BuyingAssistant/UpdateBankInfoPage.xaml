@@ -5,14 +5,12 @@
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     ios:Page.UseSafeArea="true"
     ios:NavigationPage.PrefersLargeTitles="true"
-    Title="Matches"
-    Icon="ic_match.png">
-    
+    Title="User Info"
+    Icon="outline_account_circle_24.xml">
     <ContentPage.Content>
         <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
             <!--The vertical options set vertical position on page, horizontal sets it in horizontal position-->
             <Entry x:Name="PersonName" Placeholder="Full Name" TextChanged="Entry_TextChanged"/>
-
             <Picker x:Name="CardBenefits" Title="Card Benefits" SelectedIndexChanged="CardBenefits_SelectedIndexChanged">
                 <Picker.Items>
 
@@ -51,7 +49,7 @@
 
             <Picker x:Name="TypeOfAccount" Title="Bank Account Type" SelectedIndexChanged="TypeOfAccount_SelectedIndexChanged">
                 <Picker.Items>
-                    s
+
                     <x:String>Checking</x:String>
 
                     <x:String>Saving</x:String>
@@ -186,7 +184,11 @@
 
                 </Picker.Items>
             </Picker>
-
+                <Button x:Name="registerButton"
+                Text="Register" 
+                        Clicked="Handle_Clicked"
+                        VerticalOptions="EndAndExpand"
+                        HorizontalOptions="EndAndExpand"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

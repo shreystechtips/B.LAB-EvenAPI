@@ -13,8 +13,6 @@
                     Placeholder="Enter Amount of Money"
                     TextChanged="SearchTextChanged"
                        HorizontalOptions="CenterAndExpand"/>
-           
-           
             <ListView HorizontalOptions="CenterAndExpand" Footer="" x:Name="savedList">
                  <ListView.ItemTemplate>
                             <DataTemplate>

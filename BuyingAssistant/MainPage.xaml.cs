@@ -103,11 +103,12 @@ using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
         }
 
         void SearchTextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e)
-        {}
+        { }
 
         void adClicked(object sender, System.EventArgs e)
         {
             Device.OpenUri(new Uri(savingsOfferUri));
         }
+
     }
 }
