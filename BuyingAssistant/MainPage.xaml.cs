@@ -35,6 +35,10 @@ namespace BuyingAssistant
             }
             savedList.ItemsSource = vals;
         }
+          public void searchOffer(object sender, System.EventArgs e)
+        {
+            init();
+        }
 
         async private void init()
         {
@@ -126,6 +130,7 @@ namespace BuyingAssistant
                 temp.Add("url", (String)ret["loanOffers"][i]["url"]);
                 DisplayData.Add(temp);
             }
+            Navigation.PushAsync(new OffersPage(DisplayData));
         }
 
         //this method is called when the button with the text "click here" is clicked (i called the method this, you can rename this and the clicked parameter in the .xaml file)
@@ -157,10 +162,7 @@ namespace BuyingAssistant
             return new String[] { Birthdays[RB], PhoneNumbers[RPN], SSN[RSS] };
         }
     }
-    void searchOffer(object sender, System.EventArgs e)
-        {
-            init();
-        }
+  
 }
 
 /** Alert syntax

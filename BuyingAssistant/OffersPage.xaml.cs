@@ -8,7 +8,7 @@ namespace BuyingAssistant
 {
     public partial class OffersPage : ContentPage
     {
-        private List<Dictionary<String, String>> arr;
+        private List<Dictionary<String, String>> arr = new List<Dictionary<string, string>>();
         public OffersPage(List<Dictionary<String,String>> arr)
         {
             InitializeComponent();
