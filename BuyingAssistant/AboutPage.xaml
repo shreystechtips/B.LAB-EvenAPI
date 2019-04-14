@@ -6,26 +6,27 @@
             Icon="outline_info_24.xml">
     <ContentPage.Content>
         <ScrollView>
-        <StackLayout VerticalOptions="CenterAndExpand" Padding="10">
-            <Image Source="logo.png" />
-            <Label Text="Welcome to BLAB!"
+            <StackLayout VerticalOptions="CenterAndExpand" Padding="10">
+                <Image Source="logo.png" />
+                <Image Source="logo.png" />
+                <Label Text="Welcome to BLAB!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand"
                 FontAttributes="Bold"
                 FontSize="28"/>
-            <Label Text="How to use the app:"
+                <Label Text="How to use the app:"
                    VerticalOptions="CenterAndExpand"
                    HorizontalOptions="StartAndExpand"
                    FontAttributes="Bold"
                    TextColor="Maroon"/>
-            <Label Text="1. Enter or edit your personal bank information in the User Info tab."
+                <Label Text="1. Enter or edit your personal bank information in the User Info tab."
                    VerticalOptions="CenterAndExpand"
                    HorizontalOptions="StartAndExpand"/>
-            <Label Text="2. Under the Search Tab, enter the amount of money that you wish to spend."
+                <Label Text="2. Under the Search Tab, enter the amount of money that you wish to spend."
                    VerticalOptions="CenterAndExpand"
                    HorizontalOptions="StartAndExpand"
                    />
-            <Label Text="3. Hit search and a list of loan options will pop up. Each option will show you the company's name, its logo and the mean Apr. Click on the option to learn more about your loan plan!"
+                <Label Text="3. Hit search and a list of loan options will pop up. Each option will show you the company's name, its logo and the mean Apr. Click on the option to learn more about your loan plan!"
                    VerticalOptions="CenterAndExpand"
                    HorizontalOptions="StartAndExpand"/>
                 <Label Text="4. Click on the ADD icon on the top right of the screen to save the page. Give it a name and click SAVE. You can then easily visit the saved page after clicking on a specific title in the SEARCH tab."
@@ -36,11 +37,11 @@
                    HorizontalOptions="StartAndExpand"
                    FontAttributes="Bold"
                    TextColor="Maroon"/>
-            <Label Text="We are a team of four students from the great seattle area. We are all very passionate in computer science. We love to create innovative applications!"
+                <Label Text="We are a team of four students from the great seattle area. We are all very passionate in computer science. We love to create innovative applications!"
                    VerticalOptions="CenterAndExpand"
                    HorizontalOptions="StartAndExpand"/>
-            
-        </StackLayout>
-       </ScrollView>
+
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
