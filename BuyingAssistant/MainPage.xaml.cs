@@ -114,7 +114,7 @@ namespace BuyingAssistant
             await Clipboard.SetTextAsync(j);
 
             List<Dictionary<String, String>> DisplayData = new List<Dictionary<String, String>>();
-            for (int i = 0; i < ((JObject)ret["loanOffers"]).Count; i++)
+            for (int i = 0; i < ((JArray)ret["loanOffers"]).Count; i++)
             {
                 Dictionary<string, string> temp = new Dictionary<string, string>();
                 temp.Add("name", (String)ret["loanOffers"][i]["name"]);

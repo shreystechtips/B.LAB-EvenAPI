@@ -23,5 +23,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="json.cs" />
+    <None Remove="hardCode.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="hardCode.json" />
   </ItemGroup>
 </Project>

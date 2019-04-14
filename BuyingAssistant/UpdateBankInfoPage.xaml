@@ -9,6 +9,7 @@
     Icon="ic_match.png">
     
     <ContentPage.Content>
+        <ScrollView>
         <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
             <!--The vertical options set vertical position on page, horizontal sets it in horizontal position-->
             <Entry x:Name="FirstName" Placeholder="First Name" TextChanged="FirstName_TextChanged"/>
@@ -198,5 +199,6 @@
                         HorizontalOptions="EndAndExpand"/>
             
         </StackLayout>
+            </ScrollView>
     </ContentPage.Content>
 </ContentPage>
