@@ -29,11 +29,37 @@
 
                     <x:String>Student</x:String>
 
+                </Picker.Items>
+            </Picker>
+
+            <Picker x:Name="CreditRange" Title="Credit Range" SelectedIndexChanged="CreditRange_SelectedIndexChanged">
+                <Picker.Items>
+
+                    <x:String>Excellent (720 and above)</x:String> 
+
+                    <x:String>Good (660 to 719)</x:String>
+
+                    <x:String>Fair (600 to 659)</x:String>
+
+                    <x:String>Poor (600 and below)</x:String>
+
+                    <x:String>Limited (600 and below)</x:String>
 
                 </Picker.Items>
             </Picker>
 
-            <Picker x:Name="CreditRange" Title="Credit Range " SelectedIndexChanged="CardBenefits_SelectedIndexChanged"/>
+            <Picker x:Name="TypeOfAccount" Title="Bank Account Type" SelectedIndexChanged="TypeOfAccount_SelectedIndexChanged">
+                <Picker.Items>
+
+                    <x:String>Checking</x:String>
+
+                    <x:String>Saving</x:String>
+
+                    <x:String>Other</x:String>
+
+                </Picker.Items>
+                
+            </Picker>
 
         </StackLayout>
     </ContentPage.Content>
