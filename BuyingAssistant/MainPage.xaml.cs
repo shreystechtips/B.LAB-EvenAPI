@@ -9,6 +9,7 @@ using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Collections;
 
 namespace BuyingAssistant {
     //Searching for a loan, user enters the product they want and its costs
@@ -20,6 +21,8 @@ namespace BuyingAssistant {
             init();
             populateList();
         }
+
+        String savingsOfferUri;
 
         public void populateList()
         {
@@ -60,21 +63,25 @@ using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
                      j = streamReader.ReadToEnd();
                 }
                 await Clipboard.SetTextAsync(j);
-                BankBalance.FontSize = 15;
                 JObject returnData = JObject.Parse(j);
-                BankBalance.FontSize = 15;
-                JArray pending = (JArray)returnData["pendingResponses"];
-                Dictionary<String, String> vals = new Dictionary<string, string>();
-                for (int i = 0; i < pending.Count; i++)
+                JArray pending = (JArray)returnData["savingsOffers"];
+                try
                 {
-                     JObject temp = (JObject) pending[i];
-                    JObject temp2 = (JObject)temp["partner"];
-                    BankBalance.Text += temp2["name"];
+                    JObject temp = (JObject)pending["details"];
+                    String bank = temp["name"].ToString();
+                    String rate = temp["rate"].ToString();
+                    offer.Text = bank + ": " + rate;
+                    savingsOfferUri = pending["url"].ToString();
                 }
+                catch
+                {
+                    moneyLabel.IsVisible = false;
+                    offer.IsVisible = false;
+                }
+
             }
             catch (HttpRequestException)
             {
-                BankBalance.Text = "oof";
                 Device.BeginInvokeOnMainThread(() =>
                 {
                     DisplayAlert("Alert", "Request Error", "Ok");
@@ -91,9 +98,16 @@ using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
             });
         }
 
-        void SearchTextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e)
+        void Handle_ItemTapped(object sender, Xamarin.Forms.ItemTappedEventArgs e)
         {
-            
+        }
+
+        void SearchTextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e)
+        {}
+
+        void adClicked(object sender, System.EventArgs e)
+        {
+            Device.OpenUri(new Uri(savingsOfferUri));
         }
     }
 }

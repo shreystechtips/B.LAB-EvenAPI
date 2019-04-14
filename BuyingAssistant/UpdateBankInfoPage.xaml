@@ -114,7 +114,7 @@
 
                     <x:String>Single Family</x:String>
 
-                    <x:String>Town House</x:String
+                    <x:String>Town House</x:String>
 
                 </Picker.Items>
             </Picker>
