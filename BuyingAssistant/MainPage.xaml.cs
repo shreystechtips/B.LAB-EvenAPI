@@ -28,56 +28,98 @@ namespace BuyingAssistant {
             savedList.ItemsSource = vals;
         }
 
-        async private void init() {
-            //tries to create the web request (it doesn't work right now, we need to research how to do this)
-            /*
-            BankBalance.Text = "trying";        
-           JObject data = new JObject();
-
-            WebRequest req = WebRequest.Create("https://api.evenfinancial.com/leads/rateTables");
-                req.Method = "POST";
-            req.ContentType = "application/json";
-            BankBalance.Text = "created req";
-                string postData = "";//"api_option=" + "paste" + "&api_paste_code=" + temp + "&api_dev_key=" + "add_api_key";
-                byte[] byteArray = Encoding.UTF8.GetBytes(postData);
-                req.ContentLength = byteArray.Length;
-
-                Stream ds = req.GetRequestStream();
-                ds.Write(byteArray, 0, byteArray.Length);
-                BankBalance.Text = "write req";
-                ds.Close();
-                */
-
+        async private void init()
+        {
             var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://api.evenfinancial.com/leads/rateTables");
             httpWebRequest.ContentType = "application/json";
             httpWebRequest.Headers["Authorization"] = "Bearer e7675dd3-ff3b-434b-95aa-70251cc3784b_88140dd4-f13e-4ce3-8322-6eaf2ee9a2d2";
             httpWebRequest.Method = "POST";
 
-            using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream())) {
-                string json = "{\"user\":\"test\"," +
-                              "\"password\":\"bla\"}";
+            //reads file
+            var assembly = Assembly.GetExecutingAssembly();
+            var resourceName = "BuyingAssistant.hardCode.json";
+            string result;
+            using (Stream stream = assembly.GetManifestResourceStream(resourceName))
+            using (StreamReader reader = new StreamReader(stream))
+            {
+                result = reader.ReadToEnd();
+            }
 
-                streamWriter.Write(json);
+
+            JObject full = JObject.Parse(result);
+            JObject personal = (JObject)full["personalInformation"];
+            personal["firstName"] = Preferences.Get("FirstName", "");
+            personal["lastName"] = Preferences.Get("LastName", "");
+            JObject loanInf = (JObject)full["loanInformation"];
+            loanInf["loanAmount"] = Convert.ToInt32(searchBar.Text);
+            Preferences.Get("AnnualIncome", "");
+            JObject creditInf = (JObject)full["creditInformation"];
+            creditInf["providedNumericCreditScore"] = Preferences.Get("CreditRange", -1);
+            //CardBenefits.SelectedIndex = Preferences.Get("CardBenefits", -1);
+            //TypeOfAccount.SelectedIndex = Preferences.Get("TypeOfAccount", -1);
+            //PaymentFrequency.SelectedIndex = Preferences.Get("PaymentFrequency", -1);
+            //CurrentEmploymentStatus.SelectedIndex = Preferences.Get("CurrentEmploymentStatus", -1);
+            //FinanceOfResidence.SelectedIndex = Preferences.Get("FinanceOfResidence", -1);
+            //ResidenceType.SelectedIndex = Preferences.Get("ResidenceType", -1);
+            //ReasonForLoan.SelectedIndex = Preferences.Get("ReasonForLoan", -1);
+            //HighestEducationalDegree.SelectedIndex = Preferences.Get("HighestEducationalDegree", -1);
+            //TypeOfReturnOfferWanted.SelectedIndex = Preferences.Get("TypeOfReturnOfferWanted", -1);
+
+            using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
+            {
+                streamWriter.Write(JsonConvert.SerializeObject(full));
                 streamWriter.Flush();
                 streamWriter.Close();
             }
 
             WebResponse httpResponse;
-            String j;
-            try {
+            String j = "{}";
+            try
+            {
                 httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
-                using (var streamReader = new StreamReader(httpResponse.GetResponseStream())) {
+                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                {
                     j = streamReader.ReadToEnd();
-
                 }
-            } catch {
-                Console.WriteLine("error 401");
-                j = "ere";
+                JObject returnData = JObject.Parse(j);
+                testData.Text = j;
+                JArray pending = (JArray)returnData["savingsOffers"];
+                try
+                {
+                    JObject temp = (JObject)pending["details"];
+                    String bank = temp["name"].ToString();
+                    String rate = temp["rate"].ToString();
+                    offer.Text = bank + ": " + rate;
+                    savingsOfferUri = pending["url"].ToString();
+                }
+                catch
+                {
+                    moneyLabel.IsVisible = false;
+                    offer.IsVisible = false;
+                }
             }
-            Device.BeginInvokeOnMainThread(() => {
-                DisplayAlert("Alert", j, "Ok");
-                Console.WriteLine(j);
-            });
+            catch
+            {
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    DisplayAlert("Alert", "Server Error", "Ok");
+                });
+            }
+
+            JObject ret = JObject.Parse(j);
+            await Clipboard.SetTextAsync(j);
+
+            List<Dictionary<String, String>> DisplayData = new List<Dictionary<String, String>>();
+            foreach (JObject d in ret["loanOffers"])
+            {
+                d["name"] = ret["name"];
+                d["amount"] = ret["maxAmount"];
+                d["apr"] = ret["meanApr"];
+                d["desc"] = ret["originator"]["description"];
+                d["image"] = ret["originator"]["images"][0]["url"];
+                d["length"] = ret["termLength"];
+                d["url"] = ret["url"];
+            }
         }
 
         //this method is called when the button with the text "click here" is clicked (i called the method this, you can rename this and the clicked parameter in the .xaml file)
