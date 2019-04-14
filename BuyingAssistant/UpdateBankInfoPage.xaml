@@ -15,7 +15,7 @@
             <Picker x:Name="CardBenefits" Title="Card Benefits" SelectedIndexChanged="CardBenefits_SelectedIndexChanged">
                 <Picker.Items>
 
-                    <x:String>balance_transfer</x:String>
+                    <x:String>Balance Transfer</x:String>
 
                     <x:String>Earning Rewards</x:String>
 
@@ -23,11 +23,12 @@
 
                     <x:String>Travel Incentives</x:String>
 
-                    <x:String>Low_Interest</x:String>
+                    <x:String>Low Interest</x:String>
 
                     <x:String>New To Credit</x:String>
 
                     <x:String>Student</x:String>
+
 
                 </Picker.Items>
             </Picker>
