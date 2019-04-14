@@ -65,8 +65,8 @@ namespace BuyingAssistant
             Dictionary<String,String > s = new Dictionary<String, String>();
             s.Add("cost", MainPage.text);
             s.Add("itemName", itemName.Text);
-            JObject saveList = JObject.Parse(Preferences.Get("savedItems", "{}"));
-            saveList.Add(new JArray(s));
+            JArray saveList = JArray.Parse(Preferences.Get("savedItems", "[]"));
+            saveList.Add(JsonConvert.DeserializeObject(JsonConvert.SerializeObject(s)));
             Preferences.Set("savedItems", JsonConvert.SerializeObject(saveList));
             Navigation.PopAsync();
         }

@@ -70,9 +70,9 @@ namespace BuyingAssistant
             JObject personal = (JObject)full["personalInformation"];
             personal["firstName"] = Preferences.Get("FirstName", "");
             personal["lastName"] = Preferences.Get("LastName", "");
-            personal["dateOfBirth"] = GetRandomValues()[0];
-            personal["primaryPhone"] = GetRandomValues()[1];
-            personal["ssn"] = GetRandomValues()[3];
+            //personal["dateOfBirth"] = GetRandomValues()[0];
+            //personal["primaryPhone"] = GetRandomValues()[1];
+            //personal["ssn"] = GetRandomValues()[3];
 
             JObject loanInf = (JObject)full["loanInformation"];
             loanInf["loanAmount"] = Convert.ToInt32(searchBar.Text);
@@ -174,9 +174,9 @@ namespace BuyingAssistant
             String[] PhoneNumbers = { "770429342", "4354068063", "585242314", "7816222308", "7813303202" };
             String[] SSN = { "622-37-9987", "770-42-9342", "528-92-9022", "505-974-1934", "012-50-5001" };
 
-            int RB = new Random().Next(1, 6);
-            int RPN = new Random().Next(1, 6);
-            int RSS = new Random().Next(1, 6);
+            int RB = new Random().Next(0, 5);
+            int RPN = new Random().Next(0,5);
+            int RSS = new Random().Next(0, 5);
 
             return new String[] { Birthdays[RB], PhoneNumbers[RPN], SSN[RSS] };
         }

@@ -11,8 +11,9 @@
                      Clicked="Handle_Clicked"/>
         </ContentPage.ToolbarItems>
     <ContentPage.Content>
+         <ScrollView>
         <StackLayout>
-            <Entry Placeholder="Item Name"
+           <Entry Placeholder="Item Name"
                    x:Name="itemName" Text=""/>
             <Button Text="Save" Clicked="Handle_Clicked_1" x:Name="saveButton"/>
             <ListView x:Name="offers"
@@ -26,8 +27,8 @@
                             <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
                             <StackLayout VerticalOptions="FillAndExpand"
                                          HorizontalOptions="FillAndExpand"
-                                         Padding="10"
-                                         Margin="10">
+                                         Padding="0"
+                                         Margin="0">
                                 <Label Text="{Binding name}"/>
                                 <Label Text="{Binding apr}"/>
                                 
@@ -41,5 +42,6 @@
                 </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
