@@ -28,7 +28,10 @@
             <Label Text="3. Hit search and a list of loan options will pop up. Each option will show you the company's name, its logo and the mean Apr. Click on the option to learn more about your loan plan!"
                    VerticalOptions="CenterAndExpand"
                    HorizontalOptions="StartAndExpand"/>
-            <Label Text="Meet our team"
+                <Label Text="4. Click on the ADD icon on the top right of the screen to save the page. Give it a name and click SAVE. You can then easily visit the saved page after clicking on a specific title in the SEARCH tab."
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="StartAndExpand"/>
+                <Label Text="Meet our team"
                    VerticalOptions="CenterAndExpand"
                    HorizontalOptions="StartAndExpand"
                    FontAttributes="Bold"
