@@ -9,17 +9,23 @@
     <ContentPage.Content>
         <StackLayout>
             <ListView x:Name="offers"
-                      ItemTapped="Offers_ItemTapped">
+                      ItemTapped="Offers_ItemTapped"
+                      HorizontalOptions="StartAndExpand"
+                      VerticalOptions="StartAndExpand"
+                      Footer="">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
+                        <ViewCell Height="30">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
                             <StackLayout VerticalOptions="FillAndExpand"
                                          HorizontalOptions="FillAndExpand"
-                                         Padding="10"
+                                         Padding="0"
                                          Margin="0">
-                                <Label Text="{Binding avgApr}"/>
-                                <Label Text="{Binding monthlyPay}"/>
+                                <Label Text="{Binding name}"/>
+                                <Label Text="{Binding apr}"/>
+                                <Image Source="{Binding image}"/>
                             </StackLayout>
+                                </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

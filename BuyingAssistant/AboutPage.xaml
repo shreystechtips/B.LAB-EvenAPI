@@ -1,10 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BuyingAssistant.AboutPage"
              Title="About App"
-            Icon="outline_account_circle_24.xml">
+            Icon="outline_info_24.xml">
     <ContentPage.Content>
+        <ScrollView>
         <StackLayout VerticalOptions="CenterAndExpand" Padding="10">
             <Image Source="logo.png" />
             <Label Text="Welcome to BLAB!"
@@ -37,6 +38,6 @@
                    HorizontalOptions="StartAndExpand"/>
             
         </StackLayout>
-       
+       </ScrollView>
     </ContentPage.Content>
 </ContentPage>
