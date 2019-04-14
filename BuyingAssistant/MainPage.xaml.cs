@@ -157,6 +157,10 @@ namespace BuyingAssistant
             return new String[] { Birthdays[RB], PhoneNumbers[RPN], SSN[RSS] };
         }
     }
+    void searchOffer(object sender, System.EventArgs e)
+        {
+            init();
+        }
 }
 
 /** Alert syntax
