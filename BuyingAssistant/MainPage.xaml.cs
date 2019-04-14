@@ -61,11 +61,20 @@ namespace BuyingAssistant
             JObject personal = (JObject)full["personalInformation"];
             personal["firstName"] = Preferences.Get("FirstName", "");
             personal["lastName"] = Preferences.Get("LastName", "");
+            personal["dateOfBirth"] = GetRandomValues()[0];
+            personal["primaryPhone"] = GetRandomValues()[1];
+            personal["ssn"] = GetRandomValues()[3];
+
             JObject loanInf = (JObject)full["loanInformation"];
             loanInf["loanAmount"] = Convert.ToInt32(searchBar.Text);
             Preferences.Get("AnnualIncome", "");
             JObject creditInf = (JObject)full["creditInformation"];
             creditInf["providedNumericCreditScore"] = Preferences.Get("CreditRange", -1);
+
+            
+            
+
+
             //CardBenefits.SelectedIndex = Preferences.Get("CardBenefits", -1);
             //TypeOfAccount.SelectedIndex = Preferences.Get("TypeOfAccount", -1);
             //PaymentFrequency.SelectedIndex = Preferences.Get("PaymentFrequency", -1);
@@ -117,7 +126,7 @@ namespace BuyingAssistant
             await Clipboard.SetTextAsync(j);
 
             List<Dictionary<String, String>> DisplayData = new List<Dictionary<String, String>>();
-            Clipboard.SetTextAsync(ret["loanOffers"].ToString());
+            await Clipboard.SetTextAsync(ret["loanOffers"].ToString());
             foreach (JObject d in (JArray)ret["loanOffers"])
             {
                 Dictionary<string, string> temp = new Dictionary<string, string>();
@@ -153,7 +162,7 @@ namespace BuyingAssistant
         {
 
             String[] Birthdays = { "3/13/1989", "7/2/1968", "9/30/1996", "10/14/1985", "6/15/1959" };
-            String[] PhoneNumbers = { "770-42-9342", "435-406-8063", "585-24-2314", "781-622-2308", "781-330-3202" };
+            String[] PhoneNumbers = { "770429342", "4354068063", "585242314", "7816222308", "7813303202" };
             String[] SSN = { "622-37-9987", "770-42-9342", "528-92-9022", "505-974-1934", "012-50-5001" };
 
             int RB = new Random().Next(1, 6);
