@@ -61,6 +61,7 @@ namespace BuyingAssistant {
                 streamWriter.Flush();
                 streamWriter.Close();
             }
+
             WebResponse httpResponse;
             String j;
             try {

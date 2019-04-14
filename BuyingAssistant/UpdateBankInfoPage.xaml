@@ -5,12 +5,18 @@
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     ios:Page.UseSafeArea="true"
     ios:NavigationPage.PrefersLargeTitles="true"
-    Title="User Info"
-    Icon="outline_account_circle_24.xml">
+    Title="Matches"
+    Icon="ic_match.png">
+    
     <ContentPage.Content>
         <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
             <!--The vertical options set vertical position on page, horizontal sets it in horizontal position-->
-            <Entry x:Name="PersonName" Placeholder="Full Name" TextChanged="Entry_TextChanged"/>
+            <Entry x:Name="FirstName" Placeholder="First Name" TextChanged="FirstName_TextChanged"/>
+
+            <Entry x:Name="LastName" Placeholder="Last Name" TextChanged="LastName_TextChanged"/>
+
+            <Entry x:Name="AnnualIncome" Placeholder="Annual Income" TextChanged="AnnualIncome_TextChanged"/>
+
             <Picker x:Name="CardBenefits" Title="Card Benefits" SelectedIndexChanged="CardBenefits_SelectedIndexChanged">
                 <Picker.Items>
 
@@ -49,7 +55,7 @@
 
             <Picker x:Name="TypeOfAccount" Title="Bank Account Type" SelectedIndexChanged="TypeOfAccount_SelectedIndexChanged">
                 <Picker.Items>
-
+                    
                     <x:String>Checking</x:String>
 
                     <x:String>Saving</x:String>
@@ -59,7 +65,7 @@
                 </Picker.Items>
             </Picker>
 
-            <Picker x:Name="PaymentRate" Title="How often you get paid" SelectedIndexChanged="PaymentRate_SelectedIndexChanged">
+            <Picker x:Name="PaymentFrequency" Title="Payment Frequency" SelectedIndexChanged="PaymentFrequency_SelectedIndexChanged">
                 <Picker.Items>
 
                     <x:String>Weekly</x:String>
@@ -184,11 +190,13 @@
 
                 </Picker.Items>
             </Picker>
-                <Button x:Name="registerButton"
+
+            <Button x:Name="registerButton"
                 Text="Register" 
                         Clicked="Handle_Clicked"
                         VerticalOptions="EndAndExpand"
                         HorizontalOptions="EndAndExpand"/>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
