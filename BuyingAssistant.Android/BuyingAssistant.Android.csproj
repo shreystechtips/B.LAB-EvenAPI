@@ -105,6 +105,39 @@
     <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_search_black_24.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_search_black_36.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_search_black_48.png" />
+    <AndroidResource Include="Resources\drawable\outline_star_border_24.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\baseline_star_rate_black_18.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\baseline_star_rate_black_24.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\baseline_star_rate_black_36.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\baseline_star_rate_black_48.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\outline_star_border_black_18.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\outline_star_border_black_24.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\outline_star_border_black_36.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\outline_star_border_black_48.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\baseline_star_rate_black_18.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\baseline_star_rate_black_24.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\baseline_star_rate_black_36.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\baseline_star_rate_black_48.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\outline_star_border_black_18.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\outline_star_border_black_24.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\outline_star_border_black_36.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\outline_star_border_black_48.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_star_rate_black_18.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_star_rate_black_24.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_star_rate_black_36.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_star_rate_black_48.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\outline_star_border_black_18.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\outline_star_border_black_24.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\outline_star_border_black_36.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\outline_star_border_black_48.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_star_rate_black_18.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_star_rate_black_24.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_star_rate_black_36.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_star_rate_black_48.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\outline_star_border_black_18.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\outline_star_border_black_24.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\outline_star_border_black_36.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\outline_star_border_black_48.png" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

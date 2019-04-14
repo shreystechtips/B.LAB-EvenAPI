@@ -22,7 +22,7 @@ namespace BuyingAssistant {
 
         public void populateList()
         {
-            JObject s =  JObject.Parse(Preferences.Get("savedOffers", "[]"));
+            JObject s =  JObject.Parse(Preferences.Get("savedOffers", "{}"));
             Dictionary<String, String> vals = new Dictionary<string, string>();
             for(int i = 0; i < s.Count; i++)
             {
