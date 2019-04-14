@@ -33,7 +33,6 @@
                    TextColor="#b4b4b4"
                    HorizontalOptions="CenterAndExpand"
                     VerticalOptions="EndAndExpand"/>
-            <Button x:Name="offer" Clicked="adClicked"/>
             </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -19,6 +19,7 @@ namespace BuyingAssistant {
             init();
             populateList();
         }
+        String savingsOfferUri;
 
         public void populateList() {
             JObject s = JObject.Parse(Preferences.Get("savedOffers", "{}"));
@@ -79,18 +80,14 @@ namespace BuyingAssistant {
                     j = streamReader.ReadToEnd();
                 }
                 JObject returnData = JObject.Parse(j);
-                testData.Text = j;
                 JArray pending = (JArray)returnData["savingsOffers"];
                 try {
                     JObject temp = (JObject)pending["details"];
                     String bank = temp["name"].ToString();
                     String rate = temp["rate"].ToString();
-                    offer.Text = bank + ": " + rate;
-                    savingsOfferUri = pending["url"].ToString();
-                } catch {
+                    } catch {
                     moneyLabel.IsVisible = false;
-                    offer.IsVisible = false;
-                }
+                    }
             } catch {
                 Device.BeginInvokeOnMainThread(() => {
                     DisplayAlert("Alert", "Server Error", "Ok");
@@ -126,9 +123,9 @@ namespace BuyingAssistant {
         //First is social security number, second is phone number, third is birthday
         public String[] GetRandomValues() {
 
-            String[] Birthdays = { "3 / 13 / 1989", "7 / 2 / 1968", "9 / 30 / 1996", "10 / 14 / 1985", "6 / 15 / 1959" }
-            String[] PhoneNumbers = { "770 - 42 - 9342", "435 - 406 - 8063", "585 - 24 - 2314", "781 - 622 - 2308", "781 - 330 - 3202" }
-            String[] SSN = { "622 - 37 - 9987", "770 - 42 - 9342", "528 - 92 - 9022", "505 - 974 - 1934", "012 - 50 - 5001" }
+            String[] Birthdays = { "3 / 13 / 1989", "7 / 2 / 1968", "9 / 30 / 1996", "10 / 14 / 1985", "6 / 15 / 1959" };
+            String[] PhoneNumbers = { "770 - 42 - 9342", "435 - 406 - 8063", "585 - 24 - 2314", "781 - 622 - 2308", "781 - 330 - 3202" };
+            String[] SSN = { "622 - 37 - 9987", "770 - 42 - 9342", "528 - 92 - 9022", "505 - 974 - 1934", "012 - 50 - 5001" };
 
 
             int RB = new Random().Next(1, 6);
