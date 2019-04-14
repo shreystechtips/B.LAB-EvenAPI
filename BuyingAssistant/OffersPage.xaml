@@ -19,8 +19,8 @@
                             <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
                             <StackLayout VerticalOptions="FillAndExpand"
                                          HorizontalOptions="FillAndExpand"
-                                         Padding="0"
-                                         Margin="0">
+                                         Padding="10"
+                                         Margin="10">
                                 <Label Text="{Binding name}"/>
                                 <Label Text="{Binding apr}"/>
                                 <Image Source="{Binding image}"/>
