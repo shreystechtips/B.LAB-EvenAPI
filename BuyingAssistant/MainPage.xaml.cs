@@ -25,14 +25,13 @@ namespace BuyingAssistant
 
          public void populateList()
         {
-            JObject s = JObject.Parse(Preferences.Get("savedOffers", "{}"));
-            Dictionary<String, String> vals = new Dictionary<string, string>();
-            for (int i = 0; i < s.Count; i++)
+            JArray items = JArray.Parse(Preferences.Get("savedItems", "[]"));
+            Dictionary<String, String> dict = new Dictionary<String, String>();
+            foreach (JObject s in items)
             {
-                JArray temp = (JArray)s[i];
-                vals.Add((string)temp["key"], (string)temp["val"]);
+                dict.Add((String)s["cost"], (String)s["itemName"]);
             }
-            savedList.ItemsSource = vals;
+            savedList.ItemsSource = dict;
         }
           public void searchOffer(object sender, System.EventArgs e)
         {
