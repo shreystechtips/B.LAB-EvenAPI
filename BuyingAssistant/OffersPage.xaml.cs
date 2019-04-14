@@ -8,8 +8,8 @@ namespace BuyingAssistant
 {
     public partial class OffersPage : ContentPage
     {
-        private JArray arr;
-        public OffersPage(JArray arr)
+        private List<Dictionary<String, String>> arr;
+        public OffersPage(List<Dictionary<String,String>> arr)
         {
             InitializeComponent();
             offers.ItemsSource = getOffers();
@@ -28,7 +28,7 @@ namespace BuyingAssistant
             List<Dict2> dic = new List<Dict2>();
             for (int i = 0; i < arr.Count; i++)
             {
-                JObject temp = (JObject)arr[i];
+                Dictionary<String,String> temp = arr[i];
                 String a = (String) temp["apr"];
                 String b = (String) temp["monthlyPayment"];
                 String c = (String) temp["url"];
