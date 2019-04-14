@@ -32,8 +32,6 @@ namespace BuyingAssistant {
             TypeOfReturnOfferWanted.SelectedIndex = Preferences.Get("TypeOfReturnOfferWanted", -1);
         }
 
-
-
         void Entry_TextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e) {
             Preferences.Set("PersonName", e.NewTextValue);
         }
@@ -60,7 +58,7 @@ namespace BuyingAssistant {
 
          void CurrentEmploymentStatus_SelectedIndexChanged(object sender, System.EventArgs e)
         {
-            Preferences.Set("CurrentEmpoymentStatus", CurrentEmploymentStatus.SelectedIndex);
+            Preferences.Set("CurrentEmploymentStatus", CurrentEmploymentStatus.SelectedIndex);
         }
 
          void FinanceOfResidence_SelectedIndexChanged(object sender, System.EventArgs e)
