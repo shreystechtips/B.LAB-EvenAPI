@@ -8,7 +8,7 @@
     Title="User Info"
     Icon="outline_account_circle_24.xml">
     <ContentPage.Content>
-        <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
             <!--The vertical options set vertical position on page, horizontal sets it in horizontal position-->
             <Entry x:Name="PersonName" Placeholder="Full Name" TextChanged="Entry_TextChanged"/>
             <Picker x:Name="CardBenefits" Title="Card Benefits" SelectedIndexChanged="CardBenefits_SelectedIndexChanged">
