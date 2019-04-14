@@ -8,6 +8,8 @@ using Xamarin.Essentials;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Reflection;
+
 
 namespace BuyingAssistant {
     //Searching for a loan, user enters the product they want and its costs
@@ -22,14 +24,13 @@ namespace BuyingAssistant {
             JObject s = JObject.Parse(Preferences.Get("savedOffers", "{}"));
             Dictionary<String, String> vals = new Dictionary<string, string>();
             for (int i = 0; i < s.Count; i++) {
-                JArray temp = (JArray)s[i]; 
+                JArray temp = (JArray)s[i];
                 vals.Add((string)temp["key"], (string)temp["val"]);
             }
             savedList.ItemsSource = vals;
         }
 
-        async private void init()
-        {
+        async private void init() {
             var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://api.evenfinancial.com/leads/rateTables");
             httpWebRequest.ContentType = "application/json";
             httpWebRequest.Headers["Authorization"] = "Bearer e7675dd3-ff3b-434b-95aa-70251cc3784b_88140dd4-f13e-4ce3-8322-6eaf2ee9a2d2";
@@ -40,8 +41,7 @@ namespace BuyingAssistant {
             var resourceName = "BuyingAssistant.hardCode.json";
             string result;
             using (Stream stream = assembly.GetManifestResourceStream(resourceName))
-            using (StreamReader reader = new StreamReader(stream))
-            {
+            using (StreamReader reader = new StreamReader(stream)) {
                 result = reader.ReadToEnd();
             }
 
@@ -65,8 +65,7 @@ namespace BuyingAssistant {
             //HighestEducationalDegree.SelectedIndex = Preferences.Get("HighestEducationalDegree", -1);
             //TypeOfReturnOfferWanted.SelectedIndex = Preferences.Get("TypeOfReturnOfferWanted", -1);
 
-            using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
-            {
+            using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream())) {
                 streamWriter.Write(JsonConvert.SerializeObject(full));
                 streamWriter.Flush();
                 streamWriter.Close();
@@ -74,34 +73,26 @@ namespace BuyingAssistant {
 
             WebResponse httpResponse;
             String j = "{}";
-            try
-            {
+            try {
                 httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
-                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
-                {
+                using (var streamReader = new StreamReader(httpResponse.GetResponseStream())) {
                     j = streamReader.ReadToEnd();
                 }
                 JObject returnData = JObject.Parse(j);
                 testData.Text = j;
                 JArray pending = (JArray)returnData["savingsOffers"];
-                try
-                {
+                try {
                     JObject temp = (JObject)pending["details"];
                     String bank = temp["name"].ToString();
                     String rate = temp["rate"].ToString();
                     offer.Text = bank + ": " + rate;
                     savingsOfferUri = pending["url"].ToString();
-                }
-                catch
-                {
+                } catch {
                     moneyLabel.IsVisible = false;
                     offer.IsVisible = false;
                 }
-            }
-            catch
-            {
-                Device.BeginInvokeOnMainThread(() =>
-                {
+            } catch {
+                Device.BeginInvokeOnMainThread(() => {
                     DisplayAlert("Alert", "Server Error", "Ok");
                 });
             }
@@ -134,19 +125,20 @@ namespace BuyingAssistant {
         void SearchTextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e) {
 
         }
-        
-        //First is social security number, second is phone number, third is birthday
-        String[] GetRandomValues(){
 
-            String[] Birthdays = {"3/13/1989", "7/2/1968", "9/30/1996", "10/14/1985", "6/15/1959" };
-            String[] PhoneNumbers = {"770-42-9342", "435-406-8063", "585-24-2314", "781-622-2308", "781-330-3202"};
-            String[] SSN = {"622-37-9987", "770-42-9342", "528-92-9022", "505-974-1934", "012-50-5001"};
+        //First is social security number, second is phone number, third is birthday
+        public String[] GetRandomValues() {
+
+            String[] Birthdays = { "3 / 13 / 1989", "7 / 2 / 1968", "9 / 30 / 1996", "10 / 14 / 1985", "6 / 15 / 1959" }
+            String[] PhoneNumbers = { "770 - 42 - 9342", "435 - 406 - 8063", "585 - 24 - 2314", "781 - 622 - 2308", "781 - 330 - 3202" }
+            String[] SSN = { "622 - 37 - 9987", "770 - 42 - 9342", "528 - 92 - 9022", "505 - 974 - 1934", "012 - 50 - 5001" }
+
 
             int RB = new Random().Next(1, 6);
             int RPN = new Random().Next(1, 6);
             int RSS = new Random().Next(1, 6);
 
-            return new String[] {Birthdays[RB], PhoneNumbers[RPN], SSN[RSS]};
+            return new String[] { Birthdays[RB], PhoneNumbers[RPN], SSN[RSS] };
         }
     }
 }
