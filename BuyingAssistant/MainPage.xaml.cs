@@ -21,9 +21,13 @@ namespace BuyingAssistant
             InitializeComponent();
             populateList();
         }
-        String savingsOfferUri;
-        public static String text;
-        public void populateList()
+        protected override void OnAppearing()
+        {
+            populateList();
+        }
+            String savingsOfferUri;
+
+         public void populateList()
         {
             JArray items = JArray.Parse(Preferences.Get("savedItems", "[]"));
             Dictionary<String, String> dict = new Dictionary<String, String>();
@@ -49,6 +53,7 @@ namespace BuyingAssistant
 
         async private void init()
         {
+            Preferences.Set("textVal", searchBar.Text);
             var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://api.evenfinancial.com/leads/rateTables");
             httpWebRequest.ContentType = "application/json";
             httpWebRequest.Headers["Authorization"] = "Bearer e7675dd3-ff3b-434b-95aa-70251cc3784b_88140dd4-f13e-4ce3-8322-6eaf2ee9a2d2";
@@ -153,7 +158,7 @@ namespace BuyingAssistant
 
         void SearchTextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e)
         {
-             text = e.NewTextValue;
+            Preferences.Set("textVal", searchBar.Text);
         }
 
         //First is social security number, second is phone number, third is birthday
@@ -170,8 +175,13 @@ namespace BuyingAssistant
 
             return new String[] { Birthdays[RB], PhoneNumbers[RPN], SSN[RSS] };
         }
+
+        void Handle_ItemTapped(object sender, Xamarin.Forms.ItemTappedEventArgs e)
+        {
+
+        }
     }
-  
+
 }
 
 /** Alert syntax
