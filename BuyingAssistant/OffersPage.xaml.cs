@@ -64,7 +64,7 @@ namespace BuyingAssistant
         void Handle_Clicked_1(object sender, System.EventArgs e)
         {
             Dictionary<String,String > s = new Dictionary<String, String>();
-            s.Add("cost", MainPage.text);
+            s.Add("cost", Preferences.Get("textVal", "oof"));
             s.Add("itemName", itemName.Text);
             JArray saveList = JArray.Parse(Preferences.Get("savedItems", "[]"));
             saveList.Add(JsonConvert.DeserializeObject(JsonConvert.SerializeObject(s)));

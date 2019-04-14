@@ -22,8 +22,8 @@ namespace BuyingAssistant
             populateList();
         }
         String savingsOfferUri;
-        public static String text;
-        public void populateList()
+
+         public void populateList()
         {
             JObject s = JObject.Parse(Preferences.Get("savedOffers", "{}"));
             Dictionary<String, String> vals = new Dictionary<string, string>();
@@ -50,6 +50,7 @@ namespace BuyingAssistant
 
         async private void init()
         {
+            Preferences.Set("textVal", searchBar.Text);
             var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://api.evenfinancial.com/leads/rateTables");
             httpWebRequest.ContentType = "application/json";
             httpWebRequest.Headers["Authorization"] = "Bearer e7675dd3-ff3b-434b-95aa-70251cc3784b_88140dd4-f13e-4ce3-8322-6eaf2ee9a2d2";
@@ -154,7 +155,7 @@ namespace BuyingAssistant
 
         void SearchTextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e)
         {
-             text = e.NewTextValue;
+            Preferences.Set("textVal", searchBar.Text);
         }
 
         //First is social security number, second is phone number, third is birthday
