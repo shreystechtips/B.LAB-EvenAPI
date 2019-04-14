@@ -14,10 +14,7 @@ namespace BuyingAssistant
             Children.Add(new UpdateBankInfoPage(false));
             Children.Add(new AboutPage());
             NavigationPage.SetHasNavigationBar(this,false);
-            //Children.Add(new Rankings());
-            //Children.Add(new PitScouting());
             InitializeComponent();
-
         }
     }
 }
