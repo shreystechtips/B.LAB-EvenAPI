@@ -18,6 +18,10 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}"
+                                Text="Delete" IsDestructive="True" />
+                            </ViewCell.ContextActions>
                             <ContentView Margin="0" Padding="0">
                                 <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                                     <Label Text="{Binding Path=Key}" TextColor="Black" BackgroundColor="{Binding color}" x:Name="key" HorizontalTextAlignment="Start" />
