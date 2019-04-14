@@ -37,6 +37,7 @@ namespace BuyingAssistant {
         public static String alert = "";
 
        public void CreateAlert () {
+            alert = "";
             if (FirstName.Text.Equals (""))
                 alert += "\n- First Name";
             if (LastName.Text.Equals (""))
