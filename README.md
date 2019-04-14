@@ -39,10 +39,10 @@ $ fly-to-seattle drive-to-UW install app-on-visual-studios
 
 
 ## Unfinished / Future Thoughts
-> Search up the loan company and provide some info for the user to read and understand
-> Deliver more information about their loans including description and company logos
-> Provide more introspection on the loan itself by calculating whether the loan is a good option or not by analyzing the options
-> Provide services to track loan progress and notifcations to remind the user to pay a monthly payment and suggest refinancing if needed.
+* Search up the loan company and provide some info for the user to read and understand
+* Deliver more information about their loans including description and company logos
+* Provide more introspection on the loan itself by calculating whether the loan is a good option or not by analyzing the options
+* Provide services to track loan progress and notifcations to remind the user to pay a monthly payment and suggest refinancing if needed.
 
 ## Acknowledgments
 
