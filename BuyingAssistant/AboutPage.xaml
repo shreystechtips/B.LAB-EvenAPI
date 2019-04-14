@@ -5,10 +5,38 @@
              Title="About App"
             Icon="outline_account_circle_24.xml">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout VerticalOptions="CenterAndExpand" Padding="10">
+            <Image Source="logo.png" />
             <Label Text="Welcome to BLAB!"
                 VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+                HorizontalOptions="CenterAndExpand"
+                FontAttributes="Bold"
+                FontSize="28"/>
+            <Label Text="How to use the app:"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="StartAndExpand"
+                   FontAttributes="Bold"
+                   TextColor="Maroon"/>
+            <Label Text="1. Enter or edit your personal bank information in the User Info tab."
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="StartAndExpand"/>
+            <Label Text="2. Under the Search Tab, enter the amount of money that you wish to spend."
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="StartAndExpand"
+                   />
+            <Label Text="3. Hit search and a list of loan options will pop up. Each option will show you the company name and the interest rate. Click on the option to learn more about your loan plan!"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="StartAndExpand"/>
+            <Label Text="Meet our team"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="StartAndExpand"
+                   FontAttributes="Bold"
+                   TextColor="Maroon"/>
+            <Label Text="We are a team of four students from the great seattle area. We are all very passionate in computer science. We love to create innovative applications!"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="StartAndExpand"/>
+            
         </StackLayout>
+       
     </ContentPage.Content>
 </ContentPage>
