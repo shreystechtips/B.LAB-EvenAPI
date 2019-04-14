@@ -15,26 +15,20 @@
                        HorizontalOptions="CenterAndExpand"/>
              <Button Text="Search!" Clicked="searchOffer"/>
             <ListView HorizontalOptions="CenterAndExpand" Footer="" x:Name="savedList">
-                 <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <ViewCell>
-                                    <ContentView Margin="0" Padding="0">
-                                        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-                                            <Label Text="{Binding Path=Key}" TextColor="Black" BackgroundColor="{Binding color}" x:Name="key" HorizontalTextAlignment="Start" />
-                                            <Label Text="{Binding Path=Value}" x:Name="value" HorizontalTextAlignment="Start" />
-                                        </StackLayout>
-                                    </ContentView>
-                                </ViewCell>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                </ListView>
-             <Label x:Name="moneyLabel"
-                Text="Save Money!" 
-                   FontSize="25" 
-                   TextColor="#b4b4b4"
-                   HorizontalOptions="CenterAndExpand"
-                    VerticalOptions="EndAndExpand"/>
-            </StackLayout>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ContentView Margin="0" Padding="0">
+                                <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                    <Label Text="{Binding Path=Key}" TextColor="Black" BackgroundColor="{Binding color}" x:Name="key" HorizontalTextAlignment="Start" />
+                                    <Label Text="{Binding Path=Value}" x:Name="value" HorizontalTextAlignment="Start" />
+                                </StackLayout>
+                            </ContentView>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
 <!--<
