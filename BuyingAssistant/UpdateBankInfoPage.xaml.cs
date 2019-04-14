@@ -32,6 +32,33 @@ namespace BuyingAssistant {
             TypeOfReturnOfferWanted.SelectedIndex = Preferences.Get("TypeOfReturnOfferWanted", -1);
         }
 
+        public static String alert = "";
+
+        void createAlert()
+        {
+            if (PersonName.Text.Equals(""))
+                alert += "\n- Person Name";
+            if (CardBenefits.SelectedIndex == -1)
+                alert += "\n- Card Benefits";
+            if (CreditRange.SelectedIndex == -1)
+                alert += "\n- Credit Range";
+            if (TypeOfAccount.SelectedIndex == -1)
+                alert += "\n- Type of Account";
+            if (PaymentRate.SelectedIndex == -1)
+                alert += "\n- Payment Rate";
+            if (CurrentEmploymentStatus.SelectedIndex == -1)
+                alert += "\n- Current Employment Status";
+            if (FinanceOfResidence.SelectedIndex == -1)
+                alert += "\n- Finance of Residence";
+            if (ResidenceType.SelectedIndex == -1)
+                alert += "\n- Residence Type";
+            if (ReasonForLoan.SelectedIndex == -1)
+                alert += "\n- Reason for loan";
+            if (HighestEducationalDegree.SelectedIndex == -1)
+                alert += "\n- Highest Education Degree";
+            if (TypeOfReturnOfferWanted.SelectedIndex == -1)
+                alert += "\n- Type of return offer wanted";
+        }
         void Entry_TextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e) {
             Preferences.Set("PersonName", e.NewTextValue);
         }
@@ -88,6 +115,21 @@ namespace BuyingAssistant {
 
         async void Handle_Clicked(object sender, System.EventArgs e)
         {
+            if (PersonName.Text.Equals("") ||
+                CardBenefits.SelectedIndex == -1 ||
+                CreditRange.SelectedIndex == -1 ||
+                TypeOfAccount.SelectedIndex == -1 ||
+                PaymentRate.SelectedIndex == -1 ||
+                CurrentEmploymentStatus.SelectedIndex == -1 ||
+                FinanceOfResidence.SelectedIndex == -1 ||
+                ResidenceType.SelectedIndex == -1 ||
+                ReasonForLoan.SelectedIndex == -1 ||
+                HighestEducationalDegree.SelectedIndex == -1 ||
+                TypeOfReturnOfferWanted.SelectedIndex == -1)
+            {
+                createAlert();
+                await DisplayAlert("Please fill out the following:", alert, "OK");
+            }
             await Navigation.PushAsync(new MainTabbedLayout());
         }
     }
