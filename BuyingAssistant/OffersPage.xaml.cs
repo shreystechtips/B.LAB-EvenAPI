@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Xamarin.Forms;
+using Xamarin.Essentials;
 
 namespace BuyingAssistant
 {
@@ -19,6 +20,8 @@ namespace BuyingAssistant
             {
                 await DisplayAlert("Pro Tip", "Click on the icon to the top right to save all of your offers for a product, and reclick it to remove them.", "Thanks");
             });
+            itemName.IsVisible = false;
+            saveButton.IsVisible = false;
         }
 
         public class Dict2
@@ -48,12 +51,24 @@ namespace BuyingAssistant
 
         void Handle_Clicked(object sender, System.EventArgs e)
         {
-            MainPage.text
+            itemName.IsVisible = true;
+            saveButton.IsVisible = true;
         }
-
+            
         private void Offers_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             Device.OpenUri(new Uri((e.Item as Dict2).url));
+        }
+
+        void Handle_Clicked_1(object sender, System.EventArgs e)
+        {
+            Dictionary<String,String > s = new Dictionary<String, String>();
+            s.Add("cost", MainPage.text);
+            s.Add("itemName", itemName.Text);
+            JObject saveList = JObject.Parse(Preferences.Get("savedItems", "{}"));
+            saveList.Add(new JArray(s));
+            Preferences.Set("savedItems", JsonConvert.SerializeObject(saveList));
+            Navigation.PopAsync();
         }
     }
 }
