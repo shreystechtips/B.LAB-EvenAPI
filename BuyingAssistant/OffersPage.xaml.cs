@@ -14,13 +14,18 @@ namespace BuyingAssistant
             InitializeComponent();
             this.arr = arr;
             offers.ItemsSource = getOffers();
+
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                await DisplayAlert("Pro Tip", "Click on the icon to the right to save your favorite offers.", "Cool");
+            });
         }
 
         public class Dict2
         {
             public String name { get; set; }
             public String apr { get; set; }
-            public String image { get; set; }
+            public Uri image { get; set; }
             public String url { get; set; }
         }
 
@@ -35,7 +40,7 @@ namespace BuyingAssistant
                 String b = (String) temp["monthly"];
                 String c = (String) temp["url"];
                 Console.WriteLine(a + "lols" + b + "lolsdfs" + c);
-                dic.Add (new Dict2 { name = (String)temp["name"], apr = "APR: " + a, url = c, image = (string)temp["image"]});
+                dic.Add (new Dict2 { name = (String)temp["name"], apr = "APR: " + a, url = c, image = new Uri((string)temp["image"])});
             }
             return dic;
         }

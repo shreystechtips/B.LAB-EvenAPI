@@ -19,7 +19,6 @@ namespace BuyingAssistant
         public MainPage()
         {
             InitializeComponent();
-            init();
             populateList();
         }
         String savingsOfferUri;
@@ -179,7 +178,7 @@ namespace BuyingAssistant
 /** Alert syntax
 
          Device.BeginInvokeOnMainThread(async () =>
-          {
+         {
             await DisplayAlert("Alert", "Bad API Call", "Ok");
-          });
+         });
 */

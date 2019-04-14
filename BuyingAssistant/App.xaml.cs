@@ -13,7 +13,9 @@ namespace BuyingAssistant
             InitializeComponent();
 
             //If the person's name is blank then prompt them for their bank info
-            if (Preferences.Get("PersonName", "").Equals(""))
+            var p = new UpdateBankInfoPage(false);
+            p.CreateAlert();
+            if (String.IsNullOrWhiteSpace(UpdateBankInfoPage.alert))
             {
                 MainPage = new NavigationPage(new UpdateBankInfoPage(true));
             }
