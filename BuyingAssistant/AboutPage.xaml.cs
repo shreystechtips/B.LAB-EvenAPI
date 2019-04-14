@@ -7,13 +7,10 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace BuyingAssistant
-{
+namespace BuyingAssistant {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AboutPage : ContentPage
-    {
-        public AboutPage()
-        {
+    public partial class AboutPage : ContentPage {
+        public AboutPage() {
             InitializeComponent();
         }
     }

@@ -4,29 +4,22 @@ using Xamarin.Forms.Xaml;
 using Xamarin.Essentials;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
-namespace BuyingAssistant
-{
-    public partial class App : Application
-    {
-        public App()
-        {
+namespace BuyingAssistant {
+    public partial class App : Application {
+        public App() {
             InitializeComponent();
 
             //If the person's name is blank then prompt them for their bank info
             var p = new UpdateBankInfoPage(false);
             p.CreateAlert();
-            if (!String.IsNullOrWhiteSpace(UpdateBankInfoPage.alert))
-            {
+            if (!String.IsNullOrWhiteSpace(UpdateBankInfoPage.alert)) {
                 MainPage = new NavigationPage(new UpdateBankInfoPage(true));
-            }
-            else
-            {
+            } else {
                 MainPage = new NavigationPage(new MainTabbedLayout());
             }
         }
 
-        protected override void OnSleep()
-        {
+        protected override void OnSleep() {
             //When the app is sleeping or the user isn't in the app and in the task manager (switching app mode)
             //then the screen becomes white
 

@@ -10,39 +10,39 @@
         <ToolbarItem Icon="outline_add_circle_outline_24.xml" 
                      Clicked="Handle_Clicked"
                      x:Name="saveFavorites"/>
-        </ContentPage.ToolbarItems>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
-         <ScrollView>
-        <StackLayout>
-           <Entry Placeholder="Item Name"
+        <ScrollView>
+            <StackLayout>
+                <Entry Placeholder="Item Name"
                    x:Name="itemName" Text=""/>
-            <Button Text="Save" Clicked="Handle_Clicked_1" x:Name="saveButton"/>
-            <ListView x:Name="offers"
+                <Button Text="Save" Clicked="Handle_Clicked_1" x:Name="saveButton"/>
+                <ListView x:Name="offers"
                       ItemTapped="Offers_ItemTapped"
                       HorizontalOptions="StartAndExpand"
                       VerticalOptions="StartAndExpand"
                       Footer="">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell Height="30">
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
-                            <StackLayout VerticalOptions="FillAndExpand"
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell Height="30">
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                                    <StackLayout VerticalOptions="FillAndExpand"
                                          HorizontalOptions="FillAndExpand"
                                          Padding="0"
                                          Margin="0">
-                                <Label Text="{Binding name}"/>
-                                <Label Text="{Binding apr}"/>
-                                
-                            </StackLayout>
-                                <StackLayout>
-                                    <Image Source="{Binding image}"/>
+                                        <Label Text="{Binding name}"/>
+                                        <Label Text="{Binding apr}"/>
+
+                                    </StackLayout>
+                                    <StackLayout>
+                                        <Image Source="{Binding image}"/>
                                     </StackLayout>
                                 </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
