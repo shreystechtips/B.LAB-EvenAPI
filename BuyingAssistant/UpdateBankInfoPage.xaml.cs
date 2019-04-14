@@ -16,8 +16,8 @@ namespace BuyingAssistant {
             InitializeComponent();
             registerButton.IsVisible = isNextVisible;
             setFields();
-
         }
+
         void setFields(){
             PersonName.Text = Preferences.Get("PersonName", "");
             CardBenefits.SelectedIndex = Preferences.Get("CardBenefits", -1);
@@ -88,9 +88,9 @@ namespace BuyingAssistant {
             Preferences.Set("TypeOfReturnOfferWanted", TypeOfReturnOfferWanted.SelectedIndex);
         }
 
-        void Handle_Clicked(object sender, System.EventArgs e)
+        async void Handle_Clicked(object sender, System.EventArgs e)
         {
-            Navigation.PushAsync(new MainTabbedLayout());
+            await Navigation.PushAsync(new MainTabbedLayout());
         }
     }
 }
