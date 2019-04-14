@@ -4,6 +4,7 @@
     "firstName": "John",
     "lastName": "Doe",
     "email": "john@example.com",
+    "city": "New York",
     "state": "NY",
     "primaryPhone": "2125556789",
     "address1": "45 West 21st Street",
