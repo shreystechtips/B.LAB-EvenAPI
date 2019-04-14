@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BuyingAssistant.AboutPage"
              Title="About App"
-            Icon="outline_account_circle_24.xml">
+            Icon="outline_info_24.xml">
     <ContentPage.Content>
         <ScrollView>
         <StackLayout VerticalOptions="CenterAndExpand" Padding="10">
