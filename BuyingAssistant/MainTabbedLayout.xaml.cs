@@ -11,6 +11,7 @@ namespace BuyingAssistant
         public MainTabbedLayout()
         {
             Children.Add(new MainPage());
+            Children.Add(new UpdateBankInfoPage());
             //Children.Add(new Rankings());
             //Children.Add(new PitScouting());
             InitializeComponent();
