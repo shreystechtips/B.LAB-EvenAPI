@@ -17,7 +17,7 @@ namespace BuyingAssistant
 
             Device.BeginInvokeOnMainThread(async () =>
             {
-                await DisplayAlert("Pro Tip", "Click on the icon to the right to save your favorite offers.", "Cool");
+                await DisplayAlert("Pro Tip", "Click on the icon to the top right to save all of your offers for a product, and reclick it to remove them.", "Thanks");
             });
         }
 
@@ -25,7 +25,7 @@ namespace BuyingAssistant
         {
             public String name { get; set; }
             public String apr { get; set; }
-            public Uri image { get; set; }
+            public String image { get; set; }
             public String url { get; set; }
         }
 
@@ -40,7 +40,7 @@ namespace BuyingAssistant
                 String b = (String) temp["monthly"];
                 String c = (String) temp["url"];
                 Console.WriteLine(a + "lols" + b + "lolsdfs" + c);
-                dic.Add (new Dict2 { name = (String)temp["name"], apr = "APR: " + a, url = c, image = new Uri((string)temp["image"])});
+                dic.Add (new Dict2 { name = a, apr = a, url = c, image = (string)temp["image"]});
             }
             return dic;
         }
