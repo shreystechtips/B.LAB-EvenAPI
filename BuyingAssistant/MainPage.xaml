@@ -8,12 +8,12 @@
     Title="Search"
     Icon="baseline_search_24.xml">
     <ContentPage.Content>
-      <StackLayout>
+        <StackLayout>
             <SearchBar x:Name="searchBar"
                     Placeholder="Enter Amount of Money"
                     TextChanged="SearchTextChanged"
                        HorizontalOptions="CenterAndExpand"/>
-             <Button Text="Search!" Clicked="searchOffer"/>
+            <Button Text="Search!" Clicked="searchOffer"/>
             <ListView HorizontalOptions="CenterAndExpand" Footer="" x:Name="savedList" ItemTapped="Handle_ItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
