@@ -90,6 +90,22 @@ namespace BuyingAssistant {
         void SearchTextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e) {
 
         }
+        
+        //First is social security number, second is phone number, third is birthday
+        String[] GetRandomValues(){
+
+            String[] Birthdays = {“3/13/1989”, “7/2/1968”, “9/30/1996”, “10/14/1985”, “6/15/1959” }
+            String[] PhoneNumbers = {“770-42-9342”, “435-406-8063”, “585-24-2314”, “781-622-2308”, “781-330-3202”}
+            String[] SSN = {“622-37-9987”, “770-42-9342”, “528-92-9022”, “505-974-1934”, “012-50-5001”}
+
+            int RB = new Random().Next(1, 6);
+            int RPN = new Random().Next(1, 6);
+            int RSS = new Random().Next(1, 6);
+
+            return new String[] {Birthdays[RB], PhoneNumbers[RPN], SSN[RSS]}
+        }
+}   
+
     }
 }
 
