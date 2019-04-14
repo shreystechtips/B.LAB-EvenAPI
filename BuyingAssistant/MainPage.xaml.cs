@@ -53,8 +53,9 @@ namespace BuyingAssistant {
                 ds.Close();
                 */               
 
-var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://api.evenfinancial.com/leads/rateTables/e7675dd3-ff3b-434b-95aa-70251cc3784b_88140dd4-f13e-4ce3-8322-6eaf2ee9a2d2");
+var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://api.evenfinancial.com/leads/rateTables");
 httpWebRequest.ContentType = "application/json";
+            httpWebRequest.Headers["Authorization"] = "Bearer e7675dd3-ff3b-434b-95aa-70251cc3784b_88140dd4-f13e-4ce3-8322-6eaf2ee9a2d2";
 httpWebRequest.Method = "POST";
 
 using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
@@ -67,39 +68,45 @@ using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
     streamWriter.Close();
 }
             WebResponse httpResponse;
-
+            String j;
             try
             {
                 httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
                 using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
                 {
-                    var result = streamReader.ReadToEnd();
-                    Console.WriteLine(result);
+                     j = streamReader.ReadToEnd();
+
                 }
             }
             catch
             {
                 Console.WriteLine("error 401");
+                j = "ere";
             }
-/*
-        try
+            Device.BeginInvokeOnMainThread(() =>
             {
-                WebResponse wr = req.GetResponse();
-                ds = wr.GetResponseStream();
-                StreamReader reader = new StreamReader(ds);
+                DisplayAlert("Alert", j, "Ok");
+                Console.WriteLine(j);
+            });
+            /*
+                    try
+                        {
+                            WebResponse wr = req.GetResponse();
+                            ds = wr.GetResponseStream();
+                            StreamReader reader = new StreamReader(ds);
 
-                String ret = await reader.ReadToEndAsync();
-                CrossClipboard.Current.SetText(ret);
-                await DisplayAlert("Success", ret, "OK");
-            }
-            catch
-            {
-                Device.BeginInvokeOnMainThread(async () =>
-                {
-                    await DisplayAlert("Alert", "Bad API Call", "Ok");
-                });
-            }
-            */
+                            String ret = await reader.ReadToEndAsync();
+                            CrossClipboard.Current.SetText(ret);
+                            await DisplayAlert("Success", ret, "OK");
+                        }
+                        catch
+                        {
+                            Device.BeginInvokeOnMainThread(async () =>
+                            {
+                                await DisplayAlert("Alert", "Bad API Call", "Ok");
+                            });
+                        }
+                        */
         }
 
         //this method is called when the button with the text "click here" is clicked (i called the method this, you can rename this and the clicked parameter in the .xaml file)

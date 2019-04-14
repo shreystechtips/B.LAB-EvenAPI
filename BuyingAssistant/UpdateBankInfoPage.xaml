@@ -10,9 +10,9 @@
     <ContentPage.Content>
         <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
             <!--The vertical options set vertical position on page, horizontal sets it in horizontal position-->
-            <Entry x:Name="PersonName" Placeholder="Full Name" TextChanged="Entry_TextChanged"/>
+            <Entry x:Name="PersonName" Placeholder="Full Name" TextChanged="Entry_TextChanged" HorizontalOptions="CenterAndExpand"/>
 
-            <Picker x:Name="CardBenefits" Title="Card Benefits" SelectedIndexChanged="CardBenefits_SelectedIndexChanged">
+            <Picker x:Name="CardBenefits" Title="Card Benefits" SelectedIndexChanged="CardBenefits_SelectedIndexChanged" HorizontalOptions="CenterAndExpand">
                 <Picker.Items>
 
                     <x:String>Balance Transfer</x:String>
