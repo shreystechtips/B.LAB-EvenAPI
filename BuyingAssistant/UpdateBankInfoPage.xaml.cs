@@ -21,28 +21,62 @@ namespace BuyingAssistant {
         }
 
         async private void init() {
-          
+
         }
 
-        //this method is called when the button with the text "click here" is clicked (i called the method this, you can rename this and the clicked parameter in the .xaml file)
-        void Handle_Clicked(object sender, System.EventArgs e) {
+        /*         
+                //this method is called when the button with the text "click here" is clicked (i called the method this, you can rename this and the clicked parameter in the .xaml file)
+                void Handle_Clicked(object sender, System.EventArgs e) {
 
-            Device.BeginInvokeOnMainThread(async () =>
-            {
-                await DisplayAlert("Alert", "Hi", "Ok");
-            });
-        }
+                    Device.BeginInvokeOnMainThread(async () =>
+                    {
+                        await DisplayAlert("Alert", "Hi", "Ok");
+                    });
+                }
+        */
 
         private void Entry_TextChanged(object sender, TextChangedEventArgs e) {
             Preferences.Set("PersonName", e.NewTextValue);
         }
 
         private void CardBenefits_SelectedIndexChanged(System.Object sender, System.EventArgs e) {
-
+            Preferences.Set("CardBenefits", CardBenefits.SelectedIndex);
         }
 
-        private void _SelectedIndexChanged(System.Object sender, System.EventArgs e) {
+        private void CreditRange_SelectedIndexChanged(System.Object sender, System.EventArgs e) {
+            Preferences.Set("CreditRange", CreditRange.SelectedIndex);
+        }
 
+        private void TypeOfAccount_SelectedIndexChanged(System.Object sender, System.EventArgs e) {
+            Preferences.Set("TypeOfAccount", TypeOfAccount.SelectedIndex);
+        }
+
+        private void PaymentRate_SelectedIndexChanged(System.Object sender, System.EventArgs e) {
+            Preferences.Set("PaymentRate", PaymentRate.SelectedIndex);
+        }
+
+        private void CurrentEmploymentStatus_SelectedIndexChanged(System.Object sender, System.EventArgs e) {
+            Preferences.Set("CurrentEmpoymentStatus", CurrentEmploymentStatus.SelectedIndex);
+        }
+
+        private void FinanceOfResidence_SelectedIndexChanged(System.Object sender, System.EventArgs e) {
+            Preferences.Set("FinanceOfResidence", FinanceOfResidence.SelectedIndex);
+        }
+
+        private void ResidenceType_SelectedIndexChanged(System.Object sender, System.EventArgs e) {
+            Preferences.Set("ResidenceType", ResidenceType.SelectedIndex);
+        }
+
+        private void ReasonForLoan_SelectedIndexChanged(System.Object sender, System.EventArgs e) {
+            Preferences.Set("ReasonForLoan", ReasonForLoan.SelectedIndex);
+        }
+
+        private void HighestEducationalDegree_SelectedIndexChanged(System.Object sender, System.EventArgs e) {
+            Preferences.Set("HighestEducationalDegree", HighestEducationalDegree.SelectedIndex);
+        }
+
+        private void TypeOfReturnOfferWanted_SelectedIndexChanged(object sender, System.EventArgs e) {
+            Preferences.Set("TypeOfReturnOfferWanted", TypeOfReturnOfferWanted.SelectedIndex);
         }
     }
 }

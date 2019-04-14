@@ -7,12 +7,13 @@
     ios:NavigationPage.PrefersLargeTitles="true"
     Title="Matches"
     Icon="ic_match.png">
+    
     <ContentPage.Content>
         <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
             <!--The vertical options set vertical position on page, horizontal sets it in horizontal position-->
-            <Entry x:Name="PersonName" Placeholder="Full Name" TextChanged="Entry_TextChanged" HorizontalOptions="CenterAndExpand"/>
+            <Entry x:Name="PersonName" Placeholder="Full Name" TextChanged="Entry_TextChanged"/>
 
-            <Picker x:Name="CardBenefits" Title="Card Benefits" SelectedIndexChanged="CardBenefits_SelectedIndexChanged" HorizontalOptions="CenterAndExpand">
+            <Picker x:Name="CardBenefits" Title="Card Benefits" SelectedIndexChanged="CardBenefits_SelectedIndexChanged">
                 <Picker.Items>
 
                     <x:String>Balance Transfer</x:String>
@@ -35,7 +36,7 @@
             <Picker x:Name="CreditRange" Title="Credit Range" SelectedIndexChanged="CreditRange_SelectedIndexChanged">
                 <Picker.Items>
 
-                    <x:String>Excellent (720 and above)</x:String> 
+                    <x:String>Excellent (720 and above)</x:String>
 
                     <x:String>Good (660 to 719)</x:String>
 
@@ -50,7 +51,7 @@
 
             <Picker x:Name="TypeOfAccount" Title="Bank Account Type" SelectedIndexChanged="TypeOfAccount_SelectedIndexChanged">
                 <Picker.Items>
-
+                    s
                     <x:String>Checking</x:String>
 
                     <x:String>Saving</x:String>
@@ -58,7 +59,132 @@
                     <x:String>Other</x:String>
 
                 </Picker.Items>
-                
+            </Picker>
+
+            <Picker x:Name="PaymentRate" Title="How often you get paid" SelectedIndexChanged="PaymentRate_SelectedIndexChanged">
+                <Picker.Items>
+
+                    <x:String>Weekly</x:String>
+
+                    <x:String>Biweekly</x:String>
+
+                    <x:String>Twice Monthly</x:String>
+
+                    <x:String>Monthly</x:String>
+
+                </Picker.Items>
+            </Picker>
+
+            <Picker x:Name="CurrentEmploymentStatus" Title="Current Employment Status" SelectedIndexChanged="CurrentEmploymentStatus_SelectedIndexChanged">
+                <Picker.Items>
+
+                    <x:String>Employed</x:String>
+
+                    <x:String>Not Employed</x:String>
+
+                    <x:String>Self Employed</x:String>
+
+                    <x:String>Military</x:String>
+
+                    <x:String>Retired</x:String>
+
+                </Picker.Items>
+            </Picker>
+
+            <Picker x:Name="FinanceOfResidence" Title="Finance of Residence" SelectedIndexChanged="FinanceOfResidence_SelectedIndexChanged">
+                <Picker.Items>
+
+                    <x:String>Own Outright</x:String>
+
+                    <x:String>Own with Mortgage</x:String>
+
+                    <x:String>Rent</x:String>
+
+                </Picker.Items>
+            </Picker>
+
+            <Picker x:Name="ResidenceType" Title="Residence Type" SelectedIndexChanged="ResidenceType_SelectedIndexChanged">
+                <Picker.Items>
+
+                    <x:String>Condo</x:String>
+
+                    <x:String>Multi-Unit</x:String>
+
+                    <x:String>Rent</x:String>
+
+                    <x:String>Single Family</x:String>
+
+                    <x:String>Town House</x:String
+
+                </Picker.Items>
+            </Picker>
+
+            <Picker x:Name="ReasonForLoan" Title="Reason for Loan" SelectedIndexChanged="ReasonForLoan_SelectedIndexChanged">
+                <Picker.Items>
+
+                    <x:String>Auto</x:String>
+
+                    <x:String>Boat</x:String>
+
+                    <x:String>Business</x:String><x:String>Own Outright</x:String>
+
+                    <x:String>Debt Consolidation</x:String>
+
+                    <x:String>Green</x:String><x:String>Own Outright</x:String>
+
+                    <x:String>Home Improvement</x:String>
+
+                    <x:String>Household Expenses</x:String>
+                    
+                    <x:String>Large Purchases</x:String>
+                    
+                    <x:String>Medical Dental</x:String>
+                    
+                    <x:String>Moving Relocation</x:String>
+                    
+                    <x:String>Student Loan</x:String>
+                    
+                    <x:String>Taxes</x:String>
+                    
+                    <x:String>Vacation</x:String>
+                    
+                    <x:String>Wedding</x:String>
+                    
+                    <x:String>Other</x:String>
+                    
+                </Picker.Items>
+            </Picker>
+
+            <Picker x:Name="HighestEducationalDegree" Title="Highest Educational Degree" SelectedIndexChanged="HighestEducationalDegree_SelectedIndexChanged">
+                <Picker.Items>
+
+                    <x:String>Associate</x:String>
+
+                    <x:String>Bachelors</x:String>
+
+                    <x:String>High School</x:String>
+
+                    <x:String>Masters</x:String>
+
+                    <x:String>Other Graduate Degree</x:String>
+
+                    <x:String>Other</x:String>
+
+                </Picker.Items>
+            </Picker>
+
+            <Picker x:Name="TypeOfReturnOfferWanted" Title="Type of Return Offer Wanted" SelectedIndexChanged="TypeOfReturnOfferWanted_SelectedIndexChanged">
+                <Picker.Items>
+
+                    <x:String>Credit Card</x:String>
+
+                    <x:String>Loan</x:String>
+
+                    <x:String>Mortgage</x:String>
+
+                    <x:String>Savings</x:String>
+
+                </Picker.Items>
             </Picker>
 
         </StackLayout>
