@@ -14,7 +14,9 @@ namespace BuyingAssistant
             Children.Add(new UpdateBankInfoPage());
             //Children.Add(new Rankings());
             //Children.Add(new PitScouting());
+            Children.Add(new UpdateBankInfoPage());
             InitializeComponent();
+
         }
     }
 }

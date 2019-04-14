@@ -8,8 +8,9 @@
     Title="Matches"
     Icon="ic_match.png">
     <ContentPage.Content>
-        <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand"> <!--The vertical options set vertical position on page, horizontal sets it in horizontal position-->
-        <Entry x:Name="PersonName" Placeholder="Full Name" TextChanged="Entry_TextChanged"></Entry>
+        <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
+            <!--The vertical options set vertical position on page, horizontal sets it in horizontal position-->
+            <Entry x:Name="PersonName" Placeholder="Full Name" TextChanged="Entry_TextChanged"/>
 
             <Picker x:Name="CardBenefits" Title="Card Benefits" SelectedIndexChanged="CardBenefits_SelectedIndexChanged">
                 <Picker.Items>
@@ -31,8 +32,7 @@
                 </Picker.Items>
             </Picker>
 
-
-            <Picker x:Name="Test" Title="Full Name" SelectedIndexChanged="CardBenefits_SelectedIndexChanged"></Picker>
+            <Picker x:Name="CreditRange" Title="Credit Range " SelectedIndexChanged="CardBenefits_SelectedIndexChanged"/>
 
         </StackLayout>
     </ContentPage.Content>
