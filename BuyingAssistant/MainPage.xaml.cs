@@ -112,16 +112,7 @@ namespace BuyingAssistant
                 }
                 JObject returnData = JObject.Parse(j);
                 JArray pending = (JArray)returnData["savingsOffers"];
-                try
-                {
-                    JObject temp = (JObject)pending["details"];
-                    String bank = temp["name"].ToString();
-                    String rate = temp["rate"].ToString();
-                }
-                catch
-                {
-                    moneyLabel.IsVisible = false;
-                }
+
             }
             catch
             {
