@@ -6,8 +6,13 @@
     ios:Page.UseSafeArea="true"
     ios:NavigationPage.PrefersLargeTitles="true"
     Title="Offers">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="outline_add_circle_outline_24.xml" 
+                     Clicked="Handle_Clicked"/>
+        </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
+            
             <ListView x:Name="offers"
                       ItemTapped="Offers_ItemTapped"
                       HorizontalOptions="StartAndExpand"
@@ -23,8 +28,11 @@
                                          Margin="0">
                                 <Label Text="{Binding name}"/>
                                 <Label Text="{Binding apr}"/>
-                                <Image Source="{Binding image}"/>
+                                
                             </StackLayout>
+                                <StackLayout>
+                                    <Image Source="{Binding image}"/>
+                                    </StackLayout>
                                 </StackLayout>
                         </ViewCell>
                     </DataTemplate>

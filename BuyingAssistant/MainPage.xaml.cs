@@ -22,7 +22,7 @@ namespace BuyingAssistant
             populateList();
         }
         String savingsOfferUri;
-
+        public static String text;
         public void populateList()
         {
             JObject s = JObject.Parse(Preferences.Get("savedOffers", "{}"));
@@ -36,7 +36,16 @@ namespace BuyingAssistant
         }
           public void searchOffer(object sender, System.EventArgs e)
         {
-            init();
+            UpdateBankInfoPage s = new UpdateBankInfoPage(false);
+            s.CreateAlert();
+            if (!String.IsNullOrWhiteSpace(UpdateBankInfoPage.alert))
+            {
+                DisplayAlert("Error, Missing:", UpdateBankInfoPage.alert, "OK");
+            }
+            else
+            {
+                init();
+            }
         }
 
         async private void init()
@@ -145,7 +154,7 @@ namespace BuyingAssistant
 
         void SearchTextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e)
         {
-
+             text = e.NewTextValue;
         }
 
         //First is social security number, second is phone number, third is birthday

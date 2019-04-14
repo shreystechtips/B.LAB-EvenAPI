@@ -39,10 +39,16 @@ namespace BuyingAssistant
                 String a = (String) temp["apr"];
                 String b = (String) temp["monthly"];
                 String c = (String) temp["url"];
-                Console.WriteLine(a + "lols" + b + "lolsdfs" + c);
-                dic.Add (new Dict2 { name = (String)temp["name"], apr = "APR: " + a, url = c, image = new Uri((string)temp["image"])});
+                String imageUrl = temp["image"];
+                Console.WriteLine(a + "lols" + b + "lolsdfs" + c + "sfgsfgasf" + temp["image"]);
+                dic.Add (new Dict2 { name = (String)temp["name"], apr = "APR: " + a, url = c, image =new Uri(imageUrl)});
             }
             return dic;
+        }
+
+        void Handle_Clicked(object sender, System.EventArgs e)
+        {
+            MainPage.text
         }
 
         private void Offers_ItemTapped(object sender, ItemTappedEventArgs e)
