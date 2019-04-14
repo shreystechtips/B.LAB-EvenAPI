@@ -14,6 +14,11 @@ namespace BuyingAssistant
             InitializeComponent();
             this.arr = arr;
             offers.ItemsSource = getOffers();
+
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                await DisplayAlert("Pro Tip", "Click on the icon to the right to save your favorite offers.", "Cool");
+            });
         }
 
         public class Dict2
