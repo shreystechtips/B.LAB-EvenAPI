@@ -21,21 +21,32 @@ namespace BuyingAssistant
             InitializeComponent();
             populateList();
         }
+
+        public class BetterSctruct
+        {
+            public String Key { get; set; }
+            public String Value { get; set; }
+        }
         protected override void OnAppearing()
         {
             populateList();
         }
             String savingsOfferUri;
 
+        List<BetterSctruct> list;
+        JArray item;
+
          public void populateList()
         {
             JArray items = JArray.Parse(Preferences.Get("savedItems", "[]"));
-            Dictionary<String, String> dict = new Dictionary<String, String>();
+            List<BetterSctruct> dict = new List<BetterSctruct>();
             foreach (JObject s in items)
             {
-                dict.Add((String)s["cost"], (String)s["itemName"]);
+                dict.Add( new BetterSctruct { Key = (String)s["cost"], Value = (String)s["itemName"] });
             }
             savedList.ItemsSource = dict;
+            list = dict;
+            item = items;
         }
           public void searchOffer(object sender, System.EventArgs e)
         {
@@ -178,7 +189,7 @@ namespace BuyingAssistant
 
         void Handle_ItemTapped(object sender, Xamarin.Forms.ItemTappedEventArgs e)
         {
-
+            Navigation.PushAsync(new OffersPage( JsonConvert.DeserializeObject<List<Dictionary<String, String>>>(item[list.IndexOf(e.Item as BetterSctruct)]["offerDetails"] .ToString())));
         }
     }
 
