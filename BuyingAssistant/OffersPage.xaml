@@ -15,18 +15,16 @@
                       Footer="">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Orientation="Horizontal">
+                        <ViewCell Height="30">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
                             <StackLayout VerticalOptions="FillAndExpand"
                                          HorizontalOptions="FillAndExpand"
                                          Padding="0"
                                          Margin="0">
                                 <Label Text="{Binding name}"/>
-                                <Label Text="APR = {Binding apr}"/>
+                                <Label Text="{Binding apr}"/>
+                                <Image Source="{Binding image}"/>
                             </StackLayout>
-                                <StackLayout>
-                                    <Image Source="{Binding image}"/>
-                                </StackLayout>
                                 </StackLayout>
                         </ViewCell>
                     </DataTemplate>

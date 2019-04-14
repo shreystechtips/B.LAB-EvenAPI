@@ -122,7 +122,7 @@ namespace BuyingAssistant
             foreach (JObject d in (JArray)ret["loanOffers"])
             {
                 Dictionary<string, string> temp = new Dictionary<string, string>();
-                temp.Add("name", (String) d["name"]);
+                temp.Add("name", (String) d["originator"]["name"]);
                 temp.Add("amount", (String) d["maxAmount"]);
                 temp.Add("apr", (String) d["meanApr"]);
                 temp.Add("monthly", (String) d["monthlyPayment"]);

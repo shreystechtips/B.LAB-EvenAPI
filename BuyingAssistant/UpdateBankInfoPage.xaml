@@ -5,8 +5,8 @@
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     ios:Page.UseSafeArea="true"
     ios:NavigationPage.PrefersLargeTitles="true"
-    Title="Matches"
-    Icon="ic_match.png">
+    Title="User Info"
+    Icon="outline_account_circle_24.xml">
     
     <ContentPage.Content>
         <ScrollView>
