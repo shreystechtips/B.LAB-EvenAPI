@@ -8,6 +8,8 @@ using Xamarin.Essentials;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Reflection;
+
 
 namespace BuyingAssistant {
     //Searching for a loan, user enters the product they want and its costs
