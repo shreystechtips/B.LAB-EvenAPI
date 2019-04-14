@@ -36,6 +36,7 @@ namespace BuyingAssistant {
 
         void createAlert()
         {
+            alert = "";
             if (PersonName.Text.Equals(""))
                 alert += "\n- Person Name";
             if (CardBenefits.SelectedIndex == -1)
@@ -130,7 +131,11 @@ namespace BuyingAssistant {
                 createAlert();
                 await DisplayAlert("Please fill out the following:", alert, "OK");
             }
-            await Navigation.PushAsync(new MainTabbedLayout());
+            else
+            {
+                await Navigation.PushAsync(new MainTabbedLayout());
+            }
+
         }
     }
 }

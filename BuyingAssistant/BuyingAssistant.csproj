@@ -21,4 +21,7 @@
       <DependentUpon>UpdateBankInfoPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="json.cs" />
+  </ItemGroup>
 </Project>
