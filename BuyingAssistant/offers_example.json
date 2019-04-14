@@ -1,0 +1,355 @@
+{
+  "creditCardOffers": [],
+  "leadUuid": "ce67f885-179b-4dfb-aec1-bdc50c1a2914",
+  "loanAmount": 12345,
+  "loanOffers": [
+    {
+      "allowPrepayment": true,
+      "feeFixed": null,
+      "feeRate": null,
+      "maxAmount": 60000,
+      "maxApr": 0.8,
+      "maxFeeFixed": null,
+      "maxFeeRate": null,
+      "maxMonthlyPayment": 840.5,
+      "maxTotalPayment": 50430,
+      "meanApr": 0.8,
+      "meanMonthlyPayment": 840.5,
+      "meanTotalPayment": 50430,
+      "minAmount": null,
+      "minApr": 0.8,
+      "minFeeFixed": null,
+      "minFeeRate": null,
+      "minMonthlyPayment": 840.5,
+      "minTotalPayment": 50430,
+      "monthlyPayment": 840.5,
+      "originator": {
+        "companyUuid": "4c58becb-989f-4aea-8d5a-8884de19113b",
+        "description": "Between everyday expenses and unexpected costs, it’s easy to fall behind. Marcus by Goldman Sachs® helps you end the cycle of high-interest debt with a fixed rate, no-fee personal loan. Fixed rates from 5.99% to 28.99% APR. For NY residents, rates range from 5.99% to 24.99% APR. Only the most creditworthy applications qualify for the largest loan amounts and lowest rates. Marcus is backed by Goldman Sachs' 150 years of financial expertise.",
+        "disclaimer": "This is not a real offer.",
+        "images": [
+          {
+            "sizeKey": "120x40",
+            "url": "s3.amazonaws.com/aff-tag.evenfinancial.com/images/marcus/marcus_120x80_3.13.18.png"
+          }
+        ],
+        "key": "marcus",
+        "name": "Marcus"
+      },
+      "originatorId": null,
+      "preApproved": true,
+      "preQualified": true,
+      "prepaymentFee": null,
+      "recommendationScore": 1422,
+      "secured": false,
+      "sponsored": false,
+      "termLength": 5,
+      "termUnit": "year",
+      "terms": "This is not a real offer.",
+      "url": "https://offers.evenfinancial.com/ref/dc003805-029b-4cc6-bdbd-1125ca996e06",
+      "uuid": "9aec1be6-f940-4b5f-bd44-8072ce217b6a"
+    },
+    {
+      "allowPrepayment": true,
+      "feeFixed": null,
+      "feeRate": null,
+      "maxAmount": 15000,
+      "maxApr": 100,
+      "maxFeeFixed": null,
+      "maxFeeRate": null,
+      "maxMonthlyPayment": 2175.47,
+      "maxTotalPayment": 17404,
+      "meanApr": 100,
+      "meanMonthlyPayment": 2175.47,
+      "meanTotalPayment": 17404,
+      "minAmount": null,
+      "minApr": 100,
+      "minFeeFixed": null,
+      "minFeeRate": null,
+      "minMonthlyPayment": 2175.47,
+      "minTotalPayment": 17404,
+      "monthlyPayment": 2175.47,
+      "originator": {
+        "companyUuid": "e8321746-1e5f-4981-bca6-be5e84782528",
+        "description": "<span> <ul> <li>Personal loans up to $35,000 with fixed APRs from 5.99% to 29.99% and no pre-payment penalties</li> <li>Use a Best Egg loan to pay off credit cards, for home improvements or other unexpected expenses</li> <li>Easy, hassle-free online loan application that can get you money in as little as one business day</li> </span><span><li> Trusted lender with A+ BBB rating, more than 300,000 customers served and over $5 billion in funded loans</li> </ul> </span>",
+        "disclaimer": "This is not a real offer.",
+        "images": [
+          {
+            "sizeKey": "120x40",
+            "url": "aff-tag.evenfinancial.com/images/bestegg/bestegg_600w.png"
+          }
+        ],
+        "key": "best-egg",
+        "name": "Best Egg"
+      },
+      "originatorId": null,
+      "preApproved": true,
+      "preQualified": true,
+      "prepaymentFee": null,
+      "recommendationScore": 1277,
+      "secured": false,
+      "sponsored": false,
+      "termLength": 8,
+      "termUnit": "month",
+      "terms": "This is not a real offer.",
+      "url": "https://offers.evenfinancial.com/ref/e2b97288-3747-41b7-b0d9-87bedca7ae12",
+      "uuid": "9703e41a-bab6-46e2-8ba6-38f7ab01c6c8"
+    },
+    {
+      "allowPrepayment": true,
+      "feeFixed": null,
+      "feeRate": null,
+      "maxAmount": 80000,
+      "maxApr": 12.5,
+      "maxFeeFixed": null,
+      "maxFeeRate": null,
+      "maxMonthlyPayment": 584.01,
+      "maxTotalPayment": 14017,
+      "meanApr": 12.5,
+      "meanMonthlyPayment": 584.01,
+      "meanTotalPayment": 14017,
+      "minAmount": null,
+      "minApr": 12.5,
+      "minFeeFixed": null,
+      "minFeeRate": null,
+      "minMonthlyPayment": 584.01,
+      "minTotalPayment": 14017,
+      "monthlyPayment": 584.01,
+      "originator": {
+        "companyUuid": "e8321746-1e5f-4981-bca6-be5e84782528",
+        "description": "<span> <ul> <li>Personal loans up to $35,000 with fixed APRs from 5.99% to 29.99% and no pre-payment penalties</li> <li>Use a Best Egg loan to pay off credit cards, for home improvements or other unexpected expenses</li> <li>Easy, hassle-free online loan application that can get you money in as little as one business day</li> </span><span><li> Trusted lender with A+ BBB rating, more than 300,000 customers served and over $5 billion in funded loans</li> </ul> </span>",
+        "disclaimer": "This is not a real offer.",
+        "images": [
+          {
+            "sizeKey": "120x40",
+            "url": "aff-tag.evenfinancial.com/images/bestegg/bestegg_600w.png"
+          }
+        ],
+        "key": "best-egg",
+        "name": "Best Egg"
+      },
+      "originatorId": null,
+      "preApproved": true,
+      "preQualified": true,
+      "prepaymentFee": null,
+      "recommendationScore": 1277,
+      "secured": false,
+      "sponsored": false,
+      "termLength": 24,
+      "termUnit": "month",
+      "terms": "This is not a real offer.",
+      "url": "https://offers.evenfinancial.com/ref/f8f03044-df89-4a86-8801-dc9bf92b45cd",
+      "uuid": "99506504-9b7e-412b-ad6d-306e23fbb2d4"
+    },
+    {
+      "allowPrepayment": true,
+      "feeFixed": null,
+      "feeRate": null,
+      "maxAmount": 2000,
+      "maxApr": 2,
+      "maxFeeFixed": null,
+      "maxFeeRate": null,
+      "maxMonthlyPayment": null,
+      "maxTotalPayment": 2010.01,
+      "meanApr": 2,
+      "meanMonthlyPayment": null,
+      "meanTotalPayment": 2010.01,
+      "minAmount": null,
+      "minApr": 2,
+      "minFeeFixed": null,
+      "minFeeRate": null,
+      "minMonthlyPayment": null,
+      "minTotalPayment": 2010.01,
+      "monthlyPayment": null,
+      "originator": {
+        "companyUuid": "46200e2f-ad61-42a5-a8b6-b578bdf453ad",
+        "description": "<span> <ul> <li>Low fixed rate personal loans from $1,000 to $40,000</li> <li> Simple and secure- check your rate without hurting your credit score</li> <li>Fast, Simple, Secure- know your loan decision within minutes</li> </span><span><li> No Hidden Fees, No Prepayment Penalties</li> </ul> </span>",
+        "disclaimer": "This is not a real offer.",
+        "images": [
+          {
+            "sizeKey": "120x40",
+            "url": "aff-tag.evenfinancial.com/images/lendingclub/lendingclub_120.png"
+          }
+        ],
+        "key": "lending-club",
+        "name": "Lending Club"
+      },
+      "originatorId": null,
+      "preApproved": true,
+      "preQualified": true,
+      "prepaymentFee": null,
+      "recommendationScore": 229,
+      "secured": false,
+      "sponsored": false,
+      "termLength": 80,
+      "termUnit": "day",
+      "terms": "This is not a real offer.",
+      "url": "https://offers.evenfinancial.com/ref/92c658aa-a60b-4ba3-aeb5-e98013fa88bc",
+      "uuid": "9640a905-8555-4fcd-9f36-094bc3f7c2d2"
+    },
+    {
+      "allowPrepayment": true,
+      "feeFixed": null,
+      "feeRate": null,
+      "maxAmount": 1000,
+      "maxApr": 22,
+      "maxFeeFixed": null,
+      "maxFeeRate": null,
+      "maxMonthlyPayment": 22.22,
+      "maxTotalPayment": 2134,
+      "meanApr": 22,
+      "meanMonthlyPayment": 22.22,
+      "meanTotalPayment": 2134,
+      "minAmount": null,
+      "minApr": 22,
+      "minFeeFixed": null,
+      "minFeeRate": null,
+      "minMonthlyPayment": 22.22,
+      "minTotalPayment": 2134,
+      "monthlyPayment": 22.22,
+      "originator": {
+        "companyUuid": "46200e2f-ad61-42a5-a8b6-b578bdf453ad",
+        "description": "<span> <ul> <li>Low fixed rate personal loans from $1,000 to $40,000</li> <li> Simple and secure- check your rate without hurting your credit score</li> <li>Fast, Simple, Secure- know your loan decision within minutes</li> </span><span><li> No Hidden Fees, No Prepayment Penalties</li> </ul> </span>",
+        "disclaimer": "This is not a real offer.",
+        "images": [
+          {
+            "sizeKey": "120x40",
+            "url": "aff-tag.evenfinancial.com/images/lendingclub/lendingclub_120.png"
+          }
+        ],
+        "key": "lending-club",
+        "name": "Lending Club"
+      },
+      "originatorId": null,
+      "preApproved": true,
+      "preQualified": true,
+      "prepaymentFee": null,
+      "recommendationScore": 198,
+      "secured": false,
+      "sponsored": false,
+      "termLength": 8,
+      "termUnit": "year",
+      "terms": "This is not a real offer.",
+      "url": "https://offers.evenfinancial.com/ref/296eefc7-58a1-47bd-8483-531540de415b",
+      "uuid": "40f434ac-783a-41d2-9884-09d7778516d1"
+    },
+    {
+      "allowPrepayment": true,
+      "feeFixed": null,
+      "feeRate": null,
+      "maxAmount": 30000,
+      "maxApr": 10,
+      "maxFeeFixed": null,
+      "maxFeeRate": null,
+      "maxMonthlyPayment": 569.66,
+      "maxTotalPayment": 13672,
+      "meanApr": 10,
+      "meanMonthlyPayment": 569.66,
+      "meanTotalPayment": 13672,
+      "minAmount": null,
+      "minApr": 10,
+      "minFeeFixed": null,
+      "minFeeRate": null,
+      "minMonthlyPayment": 569.66,
+      "minTotalPayment": 13672,
+      "monthlyPayment": 569.66,
+      "originator": {
+        "companyUuid": "94b28cfa-c47c-431b-9221-c4b2ba2ee0ae",
+        "description": "Whether you are behind on bills, have an unexpected expense or simply want to take a vacation - Zippyloan provides the fastest access to the funds you need so you can accomplish your financial goals without delay.",
+        "disclaimer": "This is not a real offer.",
+        "images": [
+          {
+            "sizeKey": "120x40",
+            "url": "aff-tag.evenfinancial.com/images/zippyloan/zippyloan_120.png"
+          }
+        ],
+        "key": "zippyloan",
+        "name": "ZippyLoan"
+      },
+      "originatorId": null,
+      "preApproved": true,
+      "preQualified": true,
+      "prepaymentFee": null,
+      "recommendationScore": 165,
+      "secured": false,
+      "sponsored": false,
+      "termLength": 2,
+      "termUnit": "year",
+      "terms": "This is not a real offer.",
+      "url": "https://offers.evenfinancial.com/ref/0912124f-e2f7-47f6-9643-62a7289a0563",
+      "uuid": "ad15e1f4-9478-4488-9d25-ee88bc80ca1d"
+    },
+    {
+      "allowPrepayment": true,
+      "feeFixed": null,
+      "feeRate": null,
+      "maxAmount": 30000,
+      "maxApr": 40,
+      "maxFeeFixed": null,
+      "maxFeeRate": null,
+      "maxMonthlyPayment": 1265.02,
+      "maxTotalPayment": 15181,
+      "meanApr": 22.495,
+      "meanMonthlyPayment": 1158.37,
+      "meanTotalPayment": 13901,
+      "minAmount": 0,
+      "minApr": 4.99,
+      "minFeeFixed": null,
+      "minFeeRate": null,
+      "minMonthlyPayment": 1056.77,
+      "minTotalPayment": 12682,
+      "monthlyPayment": 1056.77,
+      "originator": {
+        "companyUuid": "a4683795-b21b-40a1-ae53-8236c12ad1c2",
+        "description": "CommonBond",
+        "images": [
+          {
+            "sizeKey": "120x40",
+            "url": "https://commonbond.co/images/_v20186101623/logo.svg"
+          }
+        ],
+        "key": "common-bond",
+        "name": "CommonBond"
+      },
+      "originatorId": null,
+      "preApproved": true,
+      "preQualified": true,
+      "prepaymentFee": null,
+      "recommendationScore": 165,
+      "secured": false,
+      "sponsored": false,
+      "termLength": 1,
+      "termUnit": "year",
+      "terms": "Get loans now!!!!!",
+      "url": "https://offers.evenfinancial.com/ref/9576309a-93c0-4331-bc4b-86eeff6f990a",
+      "uuid": "f554a282-f07b-4f0f-b84c-c0d4049e6c5e"
+    }
+  ],
+  "mortgageOffers": [],
+  "pendingOriginators": [
+    {
+      "companyUuid": "88e6c17e-fc34-4532-8501-0eacd207760c",
+      "images": [],
+      "key": "evenMock",
+      "name": "Even Mock"
+    }
+  ],
+  "pendingResponses": [
+    {
+      "partner": {
+        "description": "A mock offer API for the purposes of testing.",
+        "disclaimer": "All offers are for testing purposes only",
+        "imageUrl": "https://avatars3.githubusercontent.com/u/11379261?v=3&s=200",
+        "name": "Even Mock Offer API",
+        "supportsPersonalizedOffers": true,
+        "uuid": "28e489b1-92b4-4ae0-9677-bbe98fe977f8"
+      },
+      "productTypes": [
+        "loan"
+      ]
+    }
+  ],
+  "savingsOffers": [],
+  "specialOffers": [],
+  "uuid": "e097ce76-ca69-490c-b844-010a9e8505c4"
+}

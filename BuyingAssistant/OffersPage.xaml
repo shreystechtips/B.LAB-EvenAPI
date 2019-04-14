@@ -21,17 +21,18 @@
                       ItemTapped="Offers_ItemTapped"
                       HorizontalOptions="StartAndExpand"
                       VerticalOptions="StartAndExpand"
-                      Footer="">
+                      Footer="       Powered by Even"
+                      RowHeight="100">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell Height="30">
                             <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
                             <StackLayout VerticalOptions="FillAndExpand"
                                          HorizontalOptions="FillAndExpand"
-                                         Padding="0"
+                                         Padding="30"
                                          Margin="0">
-                                <Label Text="{Binding name}"/>
-                                <Label Text="{Binding apr}"/>
+                                <Label Text="{Binding name}" TextColor="Maroon" FontSize="24"/>
+                                <Label Text="{Binding apr}" FontSize="18"/>
                                 
                             </StackLayout>
                                 <StackLayout>

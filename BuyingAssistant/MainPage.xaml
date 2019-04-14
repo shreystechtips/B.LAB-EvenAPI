@@ -14,7 +14,7 @@
                     TextChanged="SearchTextChanged"
                        HorizontalOptions="CenterAndExpand"/>
              <Button Text="Search!" Clicked="searchOffer"/>
-            <ListView HorizontalOptions="CenterAndExpand" Footer="" x:Name="savedList" ItemTapped="Handle_ItemTapped">
+            <ListView HorizontalOptions="CenterAndExpand" Footer="" x:Name="savedList" ItemTapped="Handle_ItemTapped" RowHeight="100">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -22,10 +22,10 @@
                                 <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}"
                                 Text="Delete" IsDestructive="True" />
                             </ViewCell.ContextActions>
-                            <ContentView Margin="0" Padding="0">
+                            <ContentView Margin="0" Padding="30">
                                 <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-                                    <Label Text="{Binding Path=Key}" TextColor="Black" BackgroundColor="{Binding color}" x:Name="key" HorizontalTextAlignment="Start" />
-                                    <Label Text="{Binding Path=Value}" x:Name="value" HorizontalTextAlignment="Start" />
+                                    <Label Text="{Binding Path=Key}" TextColor="Maroon" BackgroundColor="{Binding color}" x:Name="key" HorizontalTextAlignment="Start" FontSize="24"/>
+                                    <Label Text="{Binding Path=Value}" x:Name="value" HorizontalTextAlignment="Start" FontSize="18" />
                                 </StackLayout>
                             </ContentView>
                         </ViewCell>
