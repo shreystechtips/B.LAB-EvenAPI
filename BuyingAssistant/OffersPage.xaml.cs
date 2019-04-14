@@ -8,12 +8,12 @@ namespace BuyingAssistant
 {
     public partial class OffersPage : ContentPage
     {
-        private List<Dictionary<String, String>> arr = new List<Dictionary<string, string>>();
+        private List<Dictionary<String, String>> arr;
         public OffersPage(List<Dictionary<String,String>> arr)
         {
             InitializeComponent();
-            offers.ItemsSource = getOffers();
             this.arr = arr;
+            offers.ItemsSource = getOffers();
         }
 
         public class Dict2
@@ -26,12 +26,14 @@ namespace BuyingAssistant
         List<Dict2> getOffers()
         {
             List<Dict2> dic = new List<Dict2>();
+            Console.WriteLine(arr.Count);
             for (int i = 0; i < arr.Count; i++)
             {
                 Dictionary<String,String> temp = arr[i];
                 String a = (String) temp["apr"];
-                String b = (String) temp["monthlyPayment"];
+                String b = (String) temp["monthly"];
                 String c = (String) temp["url"];
+                Console.WriteLine(a + "lols" + b + "lolsdfs" + c);
                 dic.Add (new Dict2 { avgApr = a, monthlyPay = b, url = c });
             }
             return dic;

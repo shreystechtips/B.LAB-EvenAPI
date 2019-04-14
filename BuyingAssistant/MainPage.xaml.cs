@@ -118,19 +118,21 @@ namespace BuyingAssistant
             await Clipboard.SetTextAsync(j);
 
             List<Dictionary<String, String>> DisplayData = new List<Dictionary<String, String>>();
-            for (int i = 0; i < ((JArray)ret["loanOffers"]).Count; i++)
+            Clipboard.SetTextAsync(ret["loanOffers"].ToString());
+            foreach (JObject d in (JArray)ret["loanOffers"])
             {
                 Dictionary<string, string> temp = new Dictionary<string, string>();
-                temp.Add("name", (String)ret["loanOffers"][i]["name"]);
-                temp.Add("amount", (String)ret["loanOffers"][i]["maxAmount"]);
-                temp.Add("apr", (String)ret["loanOffers"][i]["meanApr"]);
-                temp.Add("desc", (String)ret["loanOffers"][i]["originator"]["description"]);
-                temp.Add("image", (String)ret["loanOffers"][i]["originator"]["images"][0]["url"]);
-                temp.Add("length", (String)ret["loanOffers"][i]["termLength"]);
-                temp.Add("url", (String)ret["loanOffers"][i]["url"]);
+                temp.Add("name", (String) d["name"]);
+                temp.Add("amount", (String) d["maxAmount"]);
+                temp.Add("apr", (String) d["meanApr"]);
+                temp.Add("monthly", (String) d["monthlyPayment"]);
+                temp.Add("desc", (String) d["originator"]["description"]);
+                temp.Add("image", (String) d["originator"]["images"][0]["url"]);
+                temp.Add("length", (String) d["termLength"]);
+                temp.Add("url", (String) d["url"]);
                 DisplayData.Add(temp);
             }
-            Navigation.PushAsync(new OffersPage(DisplayData));
+            await Navigation.PushAsync(new OffersPage(DisplayData));
         }
 
         //this method is called when the button with the text "click here" is clicked (i called the method this, you can rename this and the clicked parameter in the .xaml file)
