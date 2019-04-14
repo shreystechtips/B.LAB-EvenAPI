@@ -25,7 +25,7 @@
                    VerticalOptions="CenterAndExpand"
                    HorizontalOptions="StartAndExpand"
                    />
-            <Label Text="3. Hit search and a list of loan options will pop up. Each option will show you the company name and the interest rate. Click on the option to learn more about your loan plan!"
+            <Label Text="3. Hit search and a list of loan options will pop up. Each option will show you the company's name, its logo and the mean Apr. Click on the option to learn more about your loan plan!"
                    VerticalOptions="CenterAndExpand"
                    HorizontalOptions="StartAndExpand"/>
             <Label Text="Meet our team"
