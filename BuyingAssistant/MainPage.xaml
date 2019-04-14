@@ -18,10 +18,7 @@
                    FontSize="75" 
                    TextColor="#b4b4b4"
                    HorizontalOptions="CenterAndExpand"/>
-            <Button android:drawableRight="@drawable/star_border_24" 
-                android:layout_width="wrap_content" 
-                android:layout_height="wrap_content" 
-                android:text="Some text" />
+            <Button Image="outline_star_border_24.xml"/>
             <ListView HorizontalOptions="CenterAndExpand" Footer="" x:Name="savedList">
                  <ListView.ItemTemplate>
                             <DataTemplate>
