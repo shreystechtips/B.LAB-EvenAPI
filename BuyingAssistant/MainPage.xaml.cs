@@ -11,59 +11,47 @@ using System.Collections.Generic;
 using System.Reflection;
 
 
-namespace BuyingAssistant
-{
+namespace BuyingAssistant {
     //Searching for a loan, user enters the product they want and its costs
-    public partial class MainPage : ContentPage
-    {
-        public MainPage()
-        {
+    public partial class MainPage : ContentPage {
+        public MainPage() {
             InitializeComponent();
             populateList();
         }
 
-        public class BetterSctruct
-        {
+        public class BetterSctruct {
             public String Key { get; set; }
             public String Value { get; set; }
         }
-        protected override void OnAppearing()
-        {
+        protected override void OnAppearing() {
             populateList();
         }
-            String savingsOfferUri;
+        String savingsOfferUri;
 
         List<BetterSctruct> list;
         JArray item;
 
-         public void populateList()
-        {
+        public void populateList() {
             JArray items = JArray.Parse(Preferences.Get("savedItems", "[]"));
             List<BetterSctruct> dict = new List<BetterSctruct>();
-            foreach (JObject s in items)
-            {
-                dict.Add( new BetterSctruct { Key = (String)s["cost"], Value = (String)s["itemName"] });
+            foreach (JObject s in items) {
+                dict.Add(new BetterSctruct { Key = (String)s["cost"], Value = (String)s["itemName"] });
             }
             savedList.ItemsSource = dict;
             list = dict;
             item = items;
         }
-          public void searchOffer(object sender, System.EventArgs e)
-        {
+        public void searchOffer(object sender, System.EventArgs e) {
             UpdateBankInfoPage s = new UpdateBankInfoPage(false);
             s.CreateAlert();
-            if (!String.IsNullOrWhiteSpace(UpdateBankInfoPage.alert))
-            {
+            if (!String.IsNullOrWhiteSpace(UpdateBankInfoPage.alert)) {
                 DisplayAlert("Error, Missing:", UpdateBankInfoPage.alert, "OK");
-            }
-            else
-            {
+            } else {
                 init();
             }
         }
 
-        async private void init()
-        {
+        async private void init() {
             Preferences.Set("textVal", searchBar.Text);
             var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://api.evenfinancial.com/leads/rateTables");
             httpWebRequest.ContentType = "application/json";
@@ -75,8 +63,7 @@ namespace BuyingAssistant
             var resourceName = "BuyingAssistant.hardCode.json";
             string result;
             using (Stream stream = assembly.GetManifestResourceStream(resourceName))
-            using (StreamReader reader = new StreamReader(stream))
-            {
+            using (StreamReader reader = new StreamReader(stream)) {
                 result = reader.ReadToEnd();
             }
 
@@ -95,10 +82,6 @@ namespace BuyingAssistant
             JObject creditInf = (JObject)full["creditInformation"];
             creditInf["providedNumericCreditScore"] = Preferences.Get("CreditRange", -1);
 
-            
-            
-
-
             //CardBenefits.SelectedIndex = Preferences.Get("CardBenefits", -1);
             //TypeOfAccount.SelectedIndex = Preferences.Get("TypeOfAccount", -1);
             //PaymentFrequency.SelectedIndex = Preferences.Get("PaymentFrequency", -1);
@@ -109,8 +92,7 @@ namespace BuyingAssistant
             //HighestEducationalDegree.SelectedIndex = Preferences.Get("HighestEducationalDegree", -1);
             //TypeOfReturnOfferWanted.SelectedIndex = Preferences.Get("TypeOfReturnOfferWanted", -1);
 
-            using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
-            {
+            using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream())) {
                 streamWriter.Write(JsonConvert.SerializeObject(full));
                 streamWriter.Flush();
                 streamWriter.Close();
@@ -118,21 +100,16 @@ namespace BuyingAssistant
 
             WebResponse httpResponse;
             String j = "{}";
-            try
-            {
+            try {
                 httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
-                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
-                {
+                using (var streamReader = new StreamReader(httpResponse.GetResponseStream())) {
                     j = streamReader.ReadToEnd();
                 }
                 JObject returnData = JObject.Parse(j);
                 JArray pending = (JArray)returnData["savingsOffers"];
 
-            }
-            catch
-            {
-                Device.BeginInvokeOnMainThread(() =>
-                {
+            } catch {
+                Device.BeginInvokeOnMainThread(() => {
                     DisplayAlert("Alert", "Server Error", "Ok");
                 });
             }
@@ -142,54 +119,48 @@ namespace BuyingAssistant
 
             List<Dictionary<String, String>> DisplayData = new List<Dictionary<String, String>>();
             await Clipboard.SetTextAsync(ret["loanOffers"].ToString());
-            foreach (JObject d in (JArray)ret["loanOffers"])
-            {
+            foreach (JObject d in (JArray)ret["loanOffers"]) {
                 Dictionary<string, string> temp = new Dictionary<string, string>();
-                temp.Add("name", (String) d["originator"]["name"]);
-                temp.Add("amount", (String) d["maxAmount"]);
-                temp.Add("apr", (String) d["meanApr"]);
-                temp.Add("monthly", (String) d["monthlyPayment"]);
-                temp.Add("desc", (String) d["originator"]["description"]);
-                temp.Add("image", (String) d["originator"]["images"][0]["url"]);
-                temp.Add("length", (String) d["termLength"]);
-                temp.Add("url", (String) d["url"]);
+                temp.Add("name", (String)d["originator"]["name"]);
+                temp.Add("amount", (String)d["maxAmount"]);
+                temp.Add("apr", (String)d["meanApr"]);
+                temp.Add("monthly", (String)d["monthlyPayment"]);
+                temp.Add("desc", (String)d["originator"]["description"]);
+                temp.Add("image", (String)d["originator"]["images"][0]["url"]);
+                temp.Add("length", (String)d["termLength"]);
+                temp.Add("url", (String)d["url"]);
                 DisplayData.Add(temp);
             }
             await Navigation.PushAsync(new OffersPage(DisplayData));
         }
 
         //this method is called when the button with the text "click here" is clicked (i called the method this, you can rename this and the clicked parameter in the .xaml file)
-        void Handle_Clicked(object sender, System.EventArgs e)
-        {
-            Device.BeginInvokeOnMainThread(async () =>
-            {
+        void Handle_Clicked(object sender, System.EventArgs e) {
+            Device.BeginInvokeOnMainThread(async () => {
                 await DisplayAlert("Alert", "Hi", "Ok");
             });
         }
 
-        void SearchTextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e)
-        {
+        void SearchTextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e) {
             Preferences.Set("textVal", searchBar.Text);
         }
 
         //First is social security number, second is phone number, third is birthday
-        public String[] GetRandomValues()
-        {
+        public String[] GetRandomValues() {
 
             String[] Birthdays = { "3/13/1989", "7/2/1968", "9/30/1996", "10/14/1985", "6/15/1959" };
             String[] PhoneNumbers = { "770429342", "4354068063", "585242314", "7816222308", "7813303202" };
             String[] SSN = { "622-37-9987", "770-42-9342", "528-92-9022", "505-974-1934", "012-50-5001" };
 
             int RB = new Random().Next(0, 5);
-            int RPN = new Random().Next(0,5);
+            int RPN = new Random().Next(0, 5);
             int RSS = new Random().Next(0, 5);
 
             return new String[] { Birthdays[RB], PhoneNumbers[RPN], SSN[RSS] };
         }
 
-        void Handle_ItemTapped(object sender, Xamarin.Forms.ItemTappedEventArgs e)
-        {
-            Navigation.PushAsync(new OffersPage( JsonConvert.DeserializeObject<List<Dictionary<String, String>>>(item[list.IndexOf(e.Item as BetterSctruct)]["offerDetails"] .ToString())));
+        void Handle_ItemTapped(object sender, Xamarin.Forms.ItemTappedEventArgs e) {
+            Navigation.PushAsync(new OffersPage(JsonConvert.DeserializeObject<List<Dictionary<String, String>>>(item[list.IndexOf(e.Item as BetterSctruct)]["offerDetails"].ToString())));
         }
     }
 
