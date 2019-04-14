@@ -169,7 +169,9 @@ namespace BuyingAssistant {
             var other = (BetterSctruct)menuItem;
             JArray items = JArray.Parse(Preferences.Get("savedItems", "[]"));
             items.RemoveAt((savedList.ItemsSource as List<BetterSctruct>).IndexOf(other));
-
+            Preferences.Set("savedItems", JsonConvert.SerializeObject(items));
+            savedList.ItemsSource = new List<BetterSctruct>();
+            populateList();
             DisplayAlert("Notice", "Deleted Item", "OK");
         }
 
