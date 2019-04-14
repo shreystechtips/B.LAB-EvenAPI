@@ -53,6 +53,7 @@ namespace BuyingAssistant
         {
             itemName.IsVisible = true;
             saveButton.IsVisible = true;
+            saveFavorites.Icon = "outline_remove_circle_24.xml";
         }
             
         private void Offers_ItemTapped(object sender, ItemTappedEventArgs e)

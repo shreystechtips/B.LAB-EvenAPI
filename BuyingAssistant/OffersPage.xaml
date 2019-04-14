@@ -8,7 +8,8 @@
     Title="Offers">
     <ContentPage.ToolbarItems>
         <ToolbarItem Icon="outline_add_circle_outline_24.xml" 
-                     Clicked="Handle_Clicked"/>
+                     Clicked="Handle_Clicked"
+                     x:Name="saveFavorites"/>
         </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
